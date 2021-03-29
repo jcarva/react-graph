@@ -1,10 +1,58 @@
 {
   "name": "react-graph",
   "version": "0.0.0",
-  "description": "react-graph",
-  "main": "index.js",
+  "description": "Render dynamic graphs based on d3 models",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .tsx,.ts .",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "d3": "3",
+    "deepmerge": "^4.2.2",
+    "lodash-es": "^4.17.15",
+    "re-resizable": "^6.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-select": "^4.2.1",
+    "react-svg-inline": "^2.1.1",
+    "styled-components": "^5.2.1"
+  },
+  "files": [
+    "/lib"
+  ],
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/d3": "3",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.0.4",
+    "typescript": "^4.1.2"
   },
   "repository": {
     "type": "git",
