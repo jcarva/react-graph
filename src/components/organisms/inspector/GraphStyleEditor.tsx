@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import neoGraphStyle from "../../utils/graphStyle";
 import {
   StyledPickerSelector,
   StyledTokenRelationshipType,
@@ -13,19 +12,13 @@ import {
 import { toKeyString } from "../../utils/utils";
 
 export class GraphStyleEditor extends Component<any> {
-  update: ((a: any) => { a: any }) | undefined;
-  graphStyleData = {};
-  meta = {};
   graphStyle: any;
   nodeDisplaySizes: any;
   picker: any;
   widths: any;
   constructor(props: any) {
     super(props);
-    this.graphStyle = neoGraphStyle();
-    if (this.graphStyleData) {
-      this.graphStyle.loadRules(this.graphStyleData);
-    }
+    this.graphStyle = this.props.graphStyle;
     this.nodeDisplaySizes = [];
     this.widths = [];
     for (let index = 0; index < 10; index++) {
@@ -286,15 +279,6 @@ export class GraphStyleEditor extends Component<any> {
         {pickers}
       </StyledInlineList>
     );
-  }
-
-  componentDidUpdate(prevProps: any) {
-    if (
-      this.graphStyleData &&
-      prevProps.graphStyleData !== this.graphStyleData
-    ) {
-      this.graphStyle.loadRules(this.graphStyleData);
-    }
   }
 
   render() {

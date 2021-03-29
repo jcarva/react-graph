@@ -54,7 +54,6 @@ export class GraphEventHandler {
   }
 
   nodeClose(d: any) {
-    console.log("node: ", d);
     this.graph.removeConnectedRelationships(d);
     this.graph.removeNode(d);
     this.deselectItem();
@@ -100,14 +99,6 @@ export class GraphEventHandler {
       this.graph.findNodeNeighbourIds(d.id),
       (err: any, { nodes, relationships }: any) => {
         if (err) return;
-        console.log({
-          d,
-          nodes,
-          mapNodes,
-          relationships,
-          mapRelationships,
-          graph,
-        });
         graph.addExpandedNodes(d, mapNodes(nodes));
         graph.addRelationships(mapRelationships(relationships, graph));
         graphView.update();

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // @ts-ignore
-import { optionalToString } from "../../utils/utils";
+import { optionalToString, numberToUSLocale } from "../../utils/utils";
 // @ts-ignore
 import SVGInline from "react-svg-inline";
 import {
@@ -17,7 +17,6 @@ import {
 } from "../styled";
 import { GraphStyleEditor } from "./GraphStyleEditor";
 import ClickableUrls from "./ClickableUrls";
-import { numberToUSLocale } from "../../utils/utils";
 
 const mapItemProperties = (itemProperties: any) =>
   itemProperties
@@ -86,6 +85,7 @@ export class InspectorComponent extends Component<any, any> {
             selectedLabel={item.selectedLabel}
             selectedRelType={item.selectedRelType}
             update={this.props.updateStyle}
+            graphStyle={this.props.graphStyle}
           />
         );
       }
@@ -194,6 +194,7 @@ export class InspectorComponent extends Component<any, any> {
           selectedLabel={this.props.selectedItem.item.selectedLabel}
           selectedRelType={this.props.selectedItem.item.selectedRelType}
           update={this.props.updateStyle}
+          graphStyle={this.props.graphStyle}
         />
       );
     }

@@ -26,7 +26,7 @@ class GraphContainer extends Component<any, any> {
     const { id } = currentNode;
     const relationshipsWithNeighbours = this.props.relationships.filter(
       (rel: { startNodeId: any; endNodeId: any }) =>
-        rel.startNodeId == id || rel.endNodeId == id
+        rel.startNodeId === id || rel.endNodeId === id
     );
 
     // @ts-ignore
@@ -34,7 +34,7 @@ class GraphContainer extends Component<any, any> {
     relationshipsWithNeighbours.map(
       (rel: { startNodeId: string | number; endNodeId: string | number }) => {
         // @ts-ignore
-        if (rel.startNodeId == id) {
+        if (rel.startNodeId === id) {
           // @ts-ignore
           neighboursList.push(this.totalNodesHash[id]);
           // @ts-ignore
@@ -42,7 +42,7 @@ class GraphContainer extends Component<any, any> {
         }
 
         // @ts-ignore
-        if (rel.endNodeId == id) {
+        if (rel.endNodeId === id) {
           // @ts-ignore
           neighboursList.push(this.totalNodesHash[id]);
           // @ts-ignore

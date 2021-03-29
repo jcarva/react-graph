@@ -86,10 +86,36 @@ export default class Graph {
     return this;
   }
 
+  removeRelationship(relationship: any) {
+    if (this.findRelationship(relationship.id) != null) {
+      delete this.relationshipMap[relationship.id];
+      this._relationships.splice(this._relationships.indexOf(relationship), 1);
+    }
+    return this;
+  }
+
   reset() {
     this.nodeMap = {};
     this.expandedNodeMap = {};
     this._nodes = [];
+    this.relationshipMap = {};
+    this._relationships = [];
+
+    return this;
+  }
+
+  resetNodes() {
+    this.expandedNodeMap = {};
+
+    this.nodeMap = {};
+    this._nodes = [];
+
+    return this;
+  }
+
+  resetRelationships() {
+    this.expandedNodeMap = {};
+
     this.relationshipMap = {};
     this._relationships = [];
 

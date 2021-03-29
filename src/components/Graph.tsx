@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-// @ts-ignore
-import {
-  createGraph,
-  getGraphStats,
-  mapNodes,
-  mapRelationships,
-} from "./utils/mapper";
+import { createGraph, getGraphStats, mapNodes, mapRelationships } from "./utils/mapper";
 import { GraphEventHandler } from "./utils/GraphEventHandler";
 import { ZoomControls } from "./organisms/zoom-controls/ZoomControls";
 import { StyledSvgWrapper } from "./organisms/styled";
@@ -23,26 +17,24 @@ export class GraphComponent extends Component<any, any> {
   };
 
   graphInit(el: any) {
-    // TODO: remove log
-    console.log(mapRelationships);
     this.svgElement = el;
   }
 
-  zoomInClicked() {
+  handleZoomInClick = () => {
     const limits = this.graphView.zoomIn();
     this.setState({
       zoomInLimitReached: limits.zoomInLimit,
       zoomOutLimitReached: limits.zoomOutLimit,
     });
-  }
+  };
 
-  zoomOutClicked() {
+  handleZoomOutClick = () => {
     const limits = this.graphView.zoomOut();
     this.setState({
       zoomInLimitReached: limits.zoomInLimit,
       zoomOutLimitReached: limits.zoomOutLimit,
     });
-  }
+  };
 
   componentDidMount() {
     if (this.svgElement != null) {
@@ -89,8 +81,14 @@ export class GraphComponent extends Component<any, any> {
       this.graphView.resize();
     }
     if (prevProps.nodes !== this.props.nodes) {
-      this.graph.reset();
+      this.graph.resetNodes();
       this.graph.addNodes(mapNodes(this.props.nodes));
+    }
+    if (prevProps.relationships !== this.props.relationships) {
+      this.graph.resetRelationships();
+      this.graph.addRelationships(
+        mapRelationships(this.props.relationships, this.graph)
+      );
     }
     if (prevProps.addedNodes !== this.props.addedNodes) {
       if (this.props.addedNodes.length > prevProps.addedNodes.length) {
@@ -130,8 +128,10 @@ export class GraphComponent extends Component<any, any> {
         <svg className="react-graph" ref={this.graphInit.bind(this)} />
         <ZoomControls
           zoomMenu={this.props.zoomMenu}
-          onZoomInClick={this.zoomInClicked.bind(this)}
-          onZoomOutClick={this.zoomOutClicked.bind(this)}
+          onZoomInClick={this.handleZoomInClick}
+          onZoomOutClick={this.handleZoomOutClick}
+          zoomInLimitReached={this.state.zoomInLimitReached}
+          zoomOutLimitReached={this.state.zoomOutLimitReached}
         />
       </StyledSvgWrapper>
     );

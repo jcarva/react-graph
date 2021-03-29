@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import deepmerge from "deepmerge";
+import styled from "styled-components";
 import { LegendComponent } from "./organisms/legend/Legend";
 import { GraphContainer } from "./GraphContainer";
 import { InspectorComponent } from "./organisms/inspector/Inspector";
@@ -7,6 +8,17 @@ import neoGraphStyle, {
   createNodeStyleGetter,
   createRelationshipStyleGetter,
 } from "./utils/graphStyle";
+
+const ReactGraphWrapper = styled.div`
+  display: flex;
+  width: ${(props: any) =>
+    props.width || "500px"}; // TODO: Use types default value
+  height: ${(props: any) =>
+    props.height || "500px"}; // TODO: Use types default value
+  justify-content: center;
+  position: relative;
+  text-align: center;
+`;
 
 const ReactGraph = (props: any) => {
   const [graphStyle, setGraphStyle] = useState(neoGraphStyle());
@@ -16,22 +28,46 @@ const ReactGraph = (props: any) => {
   const [stats, setStats] = useState({ labels: {}, relTypes: {} });
 
   useEffect(() => {
-    props.getStyleVersion(styleVersion);
-    props.nodeStyleGetter(createNodeStyleGetter(graphStyle));
-    props.relationshipStyleGetter(createRelationshipStyleGetter(graphStyle));
+    if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
+    if (props.onStyleChange) props.onStyleChange(getStyles()); // TODO: Use types default value
+  }, []);
+
+  useEffect(() => {
+    if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
+    if (props.onStyleChange) props.onStyleChange(getStyles()); // TODO: Use types default value
   }, [styleVersion, graphStyle]);
+
+  useEffect(() => {
+    if (props.onInspect) props.onInspect({ hoveredItem, selectedItem }); // TODO: Use types default value
+  }, [hoveredItem, selectedItem]);
+
+  useEffect(() => {
+    if (props.onStatsChange) props.onStatsChange(stats); // TODO: Use types default value
+  }, [stats]);
 
   useEffect(() => {
     setSelectedItem({});
   }, [props.initialState.nodes]);
 
-  useEffect(() => {
-    props.onInspect({ hoveredItem, selectedItem });
-  }, [hoveredItem, selectedItem]);
+  const getStyles = () => {
+    // TODO: Check if 'labels'
+    const nodes = {};
+    props.nodes.map((node: any) => {
+      node.labels.map((label: string) => {
+        nodes[label] = createNodeStyleGetter(graphStyle)(label);
+      });
+    });
 
-  useEffect(() => {
-    props.onStatsChange(stats);
-  }, [stats]);
+    // TODO: Check if 'type'
+    const relationships = {};
+    props.relationships.map((relationship: any) => {
+      relationships[relationship.type] = createRelationshipStyleGetter(
+        graphStyle
+      )(relationship.type);
+    });
+
+    return { nodes, relationships };
+  };
 
   const onSelectedLabel = (label: any, propertyKeys: any) =>
     setSelectedItem({
@@ -58,16 +94,8 @@ const ReactGraph = (props: any) => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        width: props.width || "100%",
-        height: props.height || "100%",
-        justifyContent: "center",
-        position: "relative",
-        textAlign: "center",
-      }}
-    >
+    // @ts-ignore
+    <ReactGraphWrapper width={props.width} height={props.height}>
       {props.hasLegends && (
         <LegendComponent
           stats={stats}
@@ -102,7 +130,7 @@ const ReactGraph = (props: any) => {
           hasLegends={props.hasLegends}
         />
       )}
-    </div>
+    </ReactGraphWrapper>
   );
 };
 

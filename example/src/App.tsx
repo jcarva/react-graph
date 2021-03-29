@@ -1,13 +1,8 @@
 import React from 'react';
-import Demo from './Demo';
+import Demo from './Dashboard';
+import { nodes, relationships} from './assets/mocks/random';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-     <Demo />
-    </div>
-  );
-}
+const App = () => <Demo nodes={nodes} relationships={relationships}/>;
 
 export default App;

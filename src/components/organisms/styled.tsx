@@ -138,7 +138,7 @@ export const StyledInlineListItem = styled.li`
 
 export const StyledStatusBar: any = styled.div`
   width: 95%;
-  min-height: 39px;
+  //min-height: 39px;
   line-height: 39px;
   color: ${(props) => props.theme.secondaryText};
   background-color: #fafbfd; // theme
