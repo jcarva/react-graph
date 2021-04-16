@@ -8,7 +8,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-06T00:53:52Z",
       "updatedAt": "2015-09-12T21:20:28Z",
-      "description": "Fundamental Visualizations"
+      "name": "Fundamental Visualizations"
     }
   },
   {
@@ -20,7 +20,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-05T23:44:43Z",
       "updatedAt": "2015-12-08T03:55:20Z",
-      "description": "Chiasm Boilerplate"
+      "name": "Chiasm Boilerplate"
     }
   },
   {
@@ -32,7 +32,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-14T17:16:34Z",
       "updatedAt": "2015-09-06T22:32:21Z",
-      "description": "Standalone Line Chart"
+      "name": "Standalone Line Chart"
     }
   },
   {
@@ -44,7 +44,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-14T17:15:20Z",
       "updatedAt": "2015-08-29T14:21:13Z",
-      "description": "Standalone Scatter Plot"
+      "name": "Standalone Scatter Plot"
     }
   },
   {
@@ -56,7 +56,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-02T16:03:30Z",
       "updatedAt": "2015-09-25T03:33:52Z",
-      "description": "Density-based Ticks"
+      "name": "Density-based Ticks"
     }
   },
   {
@@ -68,7 +68,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-08T00:10:10Z",
       "updatedAt": "2015-10-21T23:09:20Z",
-      "description": "Migrant Deaths Map (direct)"
+      "name": "Migrant Deaths Map (direct)"
     }
   },
   {
@@ -80,7 +80,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-14T01:03:39Z",
       "updatedAt": "2015-10-14T00:04:06Z",
-      "description": "Crossfilter & Chiasm"
+      "name": "Crossfilter & Chiasm"
     }
   },
   {
@@ -92,7 +92,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-04T01:58:14Z",
       "updatedAt": "2016-01-30T01:39:32Z",
-      "description": "World City Explorer"
+      "name": "World City Explorer"
     }
   },
   {
@@ -104,7 +104,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-10-10T02:14:52Z",
       "updatedAt": "2015-12-04T21:15:10Z",
-      "description": "Reactive Mixins for Visualizations"
+      "name": "Reactive Mixins for Visualizations"
     }
   },
   {
@@ -116,7 +116,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-10-01T23:56:02Z",
       "updatedAt": "2015-10-02T01:03:15Z",
-      "description": "Magic Bar Chart (Browserified)"
+      "name": "Magic Bar Chart (Browserified)"
     }
   },
   {
@@ -128,7 +128,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-23T00:54:34Z",
       "updatedAt": "2015-12-08T23:20:26Z",
-      "description": "Magic Bar Chart"
+      "name": "Magic Bar Chart"
     }
   },
   {
@@ -140,7 +140,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-21T00:44:16Z",
       "updatedAt": "2015-11-20T01:58:52Z",
-      "description": "Margin Convention with Model.js"
+      "name": "Margin Convention with Model.js"
     }
   },
   {
@@ -152,7 +152,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-21T00:46:38Z",
       "updatedAt": "2015-09-21T00:50:23Z",
-      "description": "fresh block"
+      "name": "fresh block"
     }
   },
   {
@@ -164,7 +164,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-08-12T20:39:34Z",
       "updatedAt": "2016-01-24T21:07:41Z",
-      "description": "Responding to Resize"
+      "name": "Responding to Resize"
     }
   },
   {
@@ -176,7 +176,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-11T03:42:16Z",
       "updatedAt": "2015-09-18T02:23:09Z",
-      "description": "Focus + Context Scatter Plots"
+      "name": "Focus + Context Scatter Plots"
     }
   },
   {
@@ -188,7 +188,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-17T22:03:44Z",
       "updatedAt": "2015-11-20T00:40:26Z",
-      "description": "Story of Chiasm"
+      "name": "Story of Chiasm"
     }
   },
   {
@@ -200,7 +200,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-16T19:18:55Z",
       "updatedAt": "2015-08-29T14:17:14Z",
-      "description": "Scatter Plot Zooming"
+      "name": "Scatter Plot Zooming"
     }
   },
   {
@@ -212,7 +212,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-21T16:46:33Z",
       "updatedAt": "2015-09-06T22:37:13Z",
-      "description": "Towards Reusable Charts Example"
+      "name": "Towards Reusable Charts Example"
     }
   },
   {
@@ -224,7 +224,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-20T18:56:24Z",
       "updatedAt": "2015-08-29T14:21:37Z",
-      "description": "href on d3 objects"
+      "name": "href on d3 objects"
     }
   },
   {
@@ -236,7 +236,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-12T02:39:13Z",
       "updatedAt": "2015-08-29T14:21:00Z",
-      "description": "Reusable Scatter Plot with Model.js"
+      "name": "Reusable Scatter Plot with Model.js"
     }
   },
   {
@@ -248,7 +248,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-15T00:41:22Z",
       "updatedAt": "2016-01-22T23:24:39Z",
-      "description": "Scatter Plot"
+      "name": "Scatter Plot"
     }
   },
   {
@@ -260,7 +260,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-18T19:01:36Z",
       "updatedAt": "2015-08-29T14:17:21Z",
-      "description": "Chiasm Bar Chart and Line Chart"
+      "name": "Chiasm Bar Chart and Line Chart"
     }
   },
   {
@@ -272,7 +272,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-11T00:01:33Z",
       "updatedAt": "2015-08-29T14:16:52Z",
-      "description": "Data Canvas Part 4 - Colors"
+      "name": "Data Canvas Part 4 - Colors"
     }
   },
   {
@@ -284,7 +284,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-09T04:27:10Z",
       "updatedAt": "2015-08-29T14:16:48Z",
-      "description": "Data Canvas Part 3 - Bar Chart"
+      "name": "Data Canvas Part 3 - Bar Chart"
     }
   },
   {
@@ -296,7 +296,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-08T19:01:24Z",
       "updatedAt": "2015-08-29T14:16:45Z",
-      "description": "Data Canvas Part 2 - Line Chart"
+      "name": "Data Canvas Part 2 - Line Chart"
     }
   },
   {
@@ -308,7 +308,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-09T23:14:54Z",
       "updatedAt": "2015-08-29T14:16:50Z",
-      "description": "Picking N Colors Automatically"
+      "name": "Picking N Colors Automatically"
     }
   },
   {
@@ -320,7 +320,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-13T20:17:35Z",
       "updatedAt": "2015-08-29T14:17:04Z",
-      "description": "Reactive Flow Diagram"
+      "name": "Reactive Flow Diagram"
     }
   },
   {
@@ -332,7 +332,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-03-07T22:46:35Z",
       "updatedAt": "2015-08-29T14:16:43Z",
-      "description": "Data Canvas Part 1 - Data"
+      "name": "Data Canvas Part 1 - Data"
     }
   },
   {
@@ -344,7 +344,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-06T02:27:12Z",
       "updatedAt": "2016-03-24T01:53:26Z",
-      "description": "Animated ROC Chart"
+      "name": "Animated ROC Chart"
     }
   },
   {
@@ -356,7 +356,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-10-19T22:04:53Z",
       "updatedAt": "2016-03-12T22:46:27Z",
-      "description": "radar chart with smallest area on top"
+      "name": "radar chart with smallest area on top"
     }
   },
   {
@@ -368,7 +368,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-10-19T19:05:55Z",
       "updatedAt": "2016-03-12T22:46:42Z",
-      "description": "radar chart for nested data"
+      "name": "radar chart for nested data"
     }
   },
   {
@@ -380,7 +380,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-09-01T17:23:03Z",
       "updatedAt": "2016-03-12T22:53:41Z",
-      "description": "stacking with negative values"
+      "name": "stacking with negative values"
     }
   },
   {
@@ -392,7 +392,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-08-29T20:55:11Z",
       "updatedAt": "2016-03-12T22:55:18Z",
-      "description": "building blocks svg flag"
+      "name": "building blocks svg flag"
     }
   },
   {
@@ -404,7 +404,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-05-10T16:52:34Z",
       "updatedAt": "2016-03-12T22:59:55Z",
-      "description": "Close Votes"
+      "name": "Close Votes"
     }
   },
   {
@@ -416,7 +416,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-04T03:00:28Z",
       "updatedAt": "2015-09-23T21:36:19Z",
-      "description": "Map & Globe"
+      "name": "Map & Globe"
     }
   },
   {
@@ -428,7 +428,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-08T06:19:51Z",
       "updatedAt": "2016-03-12T22:44:05Z",
-      "description": "County Treemap I"
+      "name": "County Treemap I"
     }
   },
   {
@@ -440,7 +440,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-24T23:03:32Z",
       "updatedAt": "2015-11-25T00:51:34Z",
-      "description": "Lynchings by State Pie Charts"
+      "name": "Lynchings by State Pie Charts"
     }
   },
   {
@@ -452,7 +452,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-24T22:01:16Z",
       "updatedAt": "2015-11-25T00:36:41Z",
-      "description": "Lynchings by State Pie Charts First Attempt"
+      "name": "Lynchings by State Pie Charts First Attempt"
     }
   },
   {
@@ -464,7 +464,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-24T01:10:45Z",
       "updatedAt": "2015-11-24T01:17:32Z",
-      "description": "Sized Pie Charts"
+      "name": "Sized Pie Charts"
     }
   },
   {
@@ -476,7 +476,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-21T19:30:49Z",
       "updatedAt": "2015-11-24T01:50:55Z",
-      "description": "Donut Chart Small Multiples"
+      "name": "Donut Chart Small Multiples"
     }
   },
   {
@@ -488,7 +488,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-21T18:58:26Z",
       "updatedAt": "2015-11-22T18:47:30Z",
-      "description": "Polar Area Small Multiples"
+      "name": "Polar Area Small Multiples"
     }
   },
   {
@@ -500,7 +500,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-23T20:32:19Z",
       "updatedAt": "2015-11-23T20:34:21Z",
-      "description": "Pie Chart Small Multiples"
+      "name": "Pie Chart Small Multiples"
     }
   },
   {
@@ -512,7 +512,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-22T22:50:34Z",
       "updatedAt": "2015-11-24T01:09:21Z",
-      "description": "Blocks Graph"
+      "name": "Blocks Graph"
     }
   },
   {
@@ -524,7 +524,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-24T01:17:35Z",
       "updatedAt": "2015-11-24T01:52:17Z",
-      "description": "Sized Donut Charts"
+      "name": "Sized Donut Charts"
     }
   },
   {
@@ -536,7 +536,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-21T18:52:13Z",
       "updatedAt": "2015-11-22T18:38:32Z",
-      "description": "Polar Area Diagram"
+      "name": "Polar Area Diagram"
     }
   },
   {
@@ -548,7 +548,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-21T04:39:52Z",
       "updatedAt": "2015-11-22T18:34:00Z",
-      "description": "Religions Pie Chart"
+      "name": "Religions Pie Chart"
     }
   },
   {
@@ -560,7 +560,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-08-06T19:33:22Z",
       "updatedAt": "2015-08-29T14:26:48Z",
-      "description": "Using d3-legend"
+      "name": "Using d3-legend"
     }
   },
   {
@@ -572,7 +572,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-10T00:09:33Z",
       "updatedAt": "2015-09-11T10:46:03Z",
-      "description": "Bootstrap Grid Example"
+      "name": "Bootstrap Grid Example"
     }
   },
   {
@@ -584,7 +584,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-10-23T21:19:33Z",
       "updatedAt": "2016-02-25T21:11:17Z",
-      "description": "Stacked Bars"
+      "name": "Stacked Bars"
     }
   },
   {
@@ -596,7 +596,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-22T23:32:04Z",
       "updatedAt": "2015-11-24T01:08:25Z",
-      "description": "Blocks Graph with Links"
+      "name": "Blocks Graph with Links"
     }
   },
   {
@@ -608,7 +608,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-17T19:49:35Z",
       "updatedAt": "2015-11-17T19:56:17Z",
-      "description": "Largest 5 Countries"
+      "name": "Largest 5 Countries"
     }
   },
   {
@@ -620,7 +620,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-12T22:44:25Z",
       "updatedAt": "2015-11-20T01:22:21Z",
-      "description": "programmatic control of a d3 brush - specify zoom"
+      "name": "programmatic control of a d3 brush - specify zoom"
     }
   },
   {
@@ -632,7 +632,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-13T00:48:48Z",
       "updatedAt": "2015-09-14T17:57:53Z",
-      "description": "Focus + Context Area Charts"
+      "name": "Focus + Context Area Charts"
     }
   },
   {
@@ -644,7 +644,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-22T22:59:01Z",
       "updatedAt": "2015-11-24T01:08:55Z",
-      "description": "Blocks Graph Edges Only"
+      "name": "Blocks Graph Edges Only"
     }
   },
   {
@@ -656,7 +656,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-08-12T20:25:38Z",
       "updatedAt": "2015-08-29T14:27:15Z",
-      "description": "Dynamic Size"
+      "name": "Dynamic Size"
     }
   },
   {
@@ -668,7 +668,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-08-07T22:28:13Z",
       "updatedAt": "2015-08-29T14:26:54Z",
-      "description": "Multi-Line Voronoi 2015"
+      "name": "Multi-Line Voronoi 2015"
     }
   },
   {
@@ -680,7 +680,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-08T05:29:46Z",
       "updatedAt": "2015-12-08T19:45:06Z",
-      "description": "Tree Fractal with Circles"
+      "name": "Tree Fractal with Circles"
     }
   },
   {
@@ -692,7 +692,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-01-10T07:14:18Z",
       "updatedAt": "2016-04-02T07:18:55Z",
-      "description": "Sporthorse Foal Registrations II"
+      "name": "Sporthorse Foal Registrations II"
     }
   },
   {
@@ -704,7 +704,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T02:46:04Z",
       "updatedAt": "2016-03-12T22:35:21Z",
-      "description": "Correlation Matrix VI"
+      "name": "Correlation Matrix VI"
     }
   },
   {
@@ -716,7 +716,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T01:48:13Z",
       "updatedAt": "2016-03-12T22:38:04Z",
-      "description": "Correlation Matrix IV"
+      "name": "Correlation Matrix IV"
     }
   },
   {
@@ -728,7 +728,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T02:18:04Z",
       "updatedAt": "2016-03-12T22:36:26Z",
-      "description": "Correlation Matrix V"
+      "name": "Correlation Matrix V"
     }
   },
   {
@@ -740,7 +740,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T02:13:06Z",
       "updatedAt": "2016-03-12T22:37:03Z",
-      "description": "tiny hexbin plot"
+      "name": "tiny hexbin plot"
     }
   },
   {
@@ -752,7 +752,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T01:21:26Z",
       "updatedAt": "2016-03-12T22:41:21Z",
-      "description": "Correlation Matrix III"
+      "name": "Correlation Matrix III"
     }
   },
   {
@@ -764,7 +764,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-07T00:30:52Z",
       "updatedAt": "2016-03-12T22:41:00Z",
-      "description": "Correlation Matrix II"
+      "name": "Correlation Matrix II"
     }
   },
   {
@@ -776,7 +776,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-07T18:36:34Z",
       "updatedAt": "2016-03-12T22:44:39Z",
-      "description": "Correlation Matrix I"
+      "name": "Correlation Matrix I"
     }
   },
   {
@@ -788,7 +788,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-29T06:32:08Z",
       "updatedAt": "2015-11-29T06:58:18Z",
-      "description": "Blocks Graph II Voronoi Sun"
+      "name": "Blocks Graph II Voronoi Sun"
     }
   },
   {
@@ -800,7 +800,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-11-23T06:33:22Z",
       "updatedAt": "2015-11-29T07:02:13Z",
-      "description": "Blocks Graph I Readme Mentions"
+      "name": "Blocks Graph I Readme Mentions"
     }
   },
   {
@@ -812,7 +812,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-16T03:07:12Z",
       "updatedAt": "2015-12-17T19:18:28Z",
-      "description": "Useless Vis"
+      "name": "Useless Vis"
     }
   },
   {
@@ -824,7 +824,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-23T23:17:59Z",
       "updatedAt": "2015-11-24T01:09:57Z",
-      "description": "Invitations Links Map"
+      "name": "Invitations Links Map"
     }
   },
   {
@@ -836,7 +836,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-19T03:10:00Z",
       "updatedAt": "2016-01-21T01:47:25Z",
-      "description": "Country Centroids on a Map"
+      "name": "Country Centroids on a Map"
     }
   },
   {
@@ -848,7 +848,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-15T02:30:22Z",
       "updatedAt": "2015-09-16T19:20:29Z",
-      "description": "Mortality"
+      "name": "Mortality"
     }
   },
   {
@@ -860,7 +860,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-04-21T00:39:52Z",
       "updatedAt": "2016-03-12T23:01:19Z",
-      "description": "Threatened Species"
+      "name": "Threatened Species"
     }
   },
   {
@@ -872,7 +872,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-07T00:48:39Z",
       "updatedAt": "2016-01-26T19:32:58Z",
-      "description": "Religions Bar Chart"
+      "name": "Religions Bar Chart"
     }
   },
   {
@@ -884,7 +884,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-20T21:10:01Z",
       "updatedAt": "2015-11-20T21:13:48Z",
-      "description": "Circle Area Chart"
+      "name": "Circle Area Chart"
     }
   },
   {
@@ -896,7 +896,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-01T00:39:12Z",
       "updatedAt": "2016-01-20T01:14:18Z",
-      "description": "Multi-Line Chart of Largest Countries"
+      "name": "Multi-Line Chart of Largest Countries"
     }
   },
   {
@@ -908,7 +908,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-04T01:08:01Z",
       "updatedAt": "2015-12-04T01:12:42Z",
-      "description": "World Population Area Chart"
+      "name": "World Population Area Chart"
     }
   },
   {
@@ -920,7 +920,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-04T01:13:23Z",
       "updatedAt": "2015-12-04T01:33:57Z",
-      "description": "Stacked Area Chart"
+      "name": "Stacked Area Chart"
     }
   },
   {
@@ -932,7 +932,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-01-22T00:55:47Z",
       "updatedAt": "2016-01-22T00:55:47Z",
-      "description": "Stacked Area Chart"
+      "name": "Stacked Area Chart"
     }
   },
   {
@@ -944,7 +944,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-17T03:07:15Z",
       "updatedAt": "2015-12-19T03:39:44Z",
-      "description": "Sortable Slices"
+      "name": "Sortable Slices"
     }
   },
   {
@@ -956,7 +956,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-14T02:57:23Z",
       "updatedAt": "2015-12-15T01:22:29Z",
-      "description": "Crime by Race Dataset"
+      "name": "Crime by Race Dataset"
     }
   },
   {
@@ -968,7 +968,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-15T00:32:25Z",
       "updatedAt": "2015-12-15T01:34:07Z",
-      "description": "Crime by Race Dataset (Normalized)"
+      "name": "Crime by Race Dataset (Normalized)"
     }
   },
   {
@@ -980,7 +980,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-14T01:40:43Z",
       "updatedAt": "2015-12-14T02:42:37Z",
-      "description": "Mother Jones Gun Violence Dataset"
+      "name": "Mother Jones Gun Violence Dataset"
     }
   },
   {
@@ -992,7 +992,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-21T02:46:06Z",
       "updatedAt": "2015-12-07T15:01:01Z",
-      "description": "The Iris Dataset"
+      "name": "The Iris Dataset"
     }
   },
   {
@@ -1004,7 +1004,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-08T04:02:38Z",
       "updatedAt": "2015-12-08T23:10:43Z",
-      "description": "Iris Dataset Scatter Plot"
+      "name": "Iris Dataset Scatter Plot"
     }
   },
   {
@@ -1016,7 +1016,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-08T19:22:17Z",
       "updatedAt": "2015-12-09T22:29:05Z",
-      "description": "Interactive Scatter Plot"
+      "name": "Interactive Scatter Plot"
     }
   },
   {
@@ -1028,7 +1028,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-06T20:49:21Z",
       "updatedAt": "2015-12-08T14:28:53Z",
-      "description": "Chiasm-Charts v0.1.0"
+      "name": "Chiasm-Charts v0.1.0"
     }
   },
   {
@@ -1040,7 +1040,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-11-30T18:55:22Z",
       "updatedAt": "2016-01-22T00:19:42Z",
-      "description": "World Population Line Chart"
+      "name": "World Population Line Chart"
     }
   },
   {
@@ -1052,7 +1052,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-12-02T00:45:17Z",
       "updatedAt": "2015-12-02T22:25:45Z",
-      "description": "Loess with science.js"
+      "name": "Loess with science.js"
     }
   },
   {
@@ -1064,7 +1064,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-01-25T23:47:35Z",
       "updatedAt": "2016-01-26T22:33:33Z",
-      "description": ""
+      "name": "Random"
     }
   },
   {
@@ -1076,7 +1076,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2015-12-05T00:09:06Z",
       "updatedAt": "2015-12-05T00:19:48Z",
-      "description": "hexbin with no axes"
+      "name": "hexbin with no axes"
     }
   },
   {
@@ -1088,7 +1088,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-08T01:32:45Z",
       "updatedAt": "2015-08-29T14:20:46Z",
-      "description": "Unemployment in San Mateo County"
+      "name": "Unemployment in San Mateo County"
     }
   },
   {
@@ -1100,7 +1100,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-02-09T22:03:03Z",
       "updatedAt": "2016-03-12T21:59:27Z",
-      "description": "Sankey Particles with only inline styles"
+      "name": "Sankey Particles with only inline styles"
     }
   },
   {
@@ -1112,7 +1112,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-09-01T01:44:28Z",
       "updatedAt": "2015-09-09T23:55:25Z",
-      "description": "Chiasm Foundation"
+      "name": "Chiasm Foundation"
     }
   },
   {
@@ -1124,7 +1124,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-04-17T10:33:29Z",
       "updatedAt": "2016-04-20T11:10:09Z",
-      "description": "Margin Convention II with ReactiveModel"
+      "name": "Margin Convention II with ReactiveModel"
     }
   },
   {
@@ -1136,7 +1136,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-04-20T10:13:51Z",
       "updatedAt": "2016-04-21T13:40:42Z",
-      "description": "Responsive Axes with ReactiveModel"
+      "name": "Responsive Axes with ReactiveModel"
     }
   },
   {
@@ -1148,7 +1148,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-04-16T07:36:06Z",
       "updatedAt": "2016-04-17T17:11:05Z",
-      "description": "Margin Convention with ReactiveModel"
+      "name": "Margin Convention with ReactiveModel"
     }
   },
   {
@@ -1160,7 +1160,7 @@ export default [
       "user": "curran",
       "createdAt": "2016-04-14T13:30:52Z",
       "updatedAt": "2016-04-16T07:52:20Z",
-      "description": "Responding to Resize with ReactiveModel"
+      "name": "Responding to Resize with ReactiveModel"
     }
   },
   {
@@ -1172,7 +1172,7 @@ export default [
       "user": "curran",
       "createdAt": "2015-05-16T19:34:21Z",
       "updatedAt": "2015-08-29T14:21:22Z",
-      "description": "ModelJS firstName lastName"
+      "name": "ModelJS firstName lastName"
     }
   },
   {
@@ -1184,7 +1184,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-05-07T22:45:06Z",
       "updatedAt": "2016-05-07T22:50:08Z",
-      "description": "canvas links positioning woes"
+      "name": "canvas links positioning woes"
     }
   },
   {
@@ -1196,7 +1196,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-04-19T02:12:22Z",
       "updatedAt": "2016-04-20T02:53:35Z",
-      "description": "ES2015 Sequences Sunburst"
+      "name": "ES2015 Sequences Sunburst"
     }
   },
   {
@@ -1208,7 +1208,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-03-02T15:26:55Z",
       "updatedAt": "2016-03-12T21:58:54Z",
-      "description": "Sankey Particles - Transparent Links"
+      "name": "Sankey Particles - Transparent Links"
     }
   },
   {
@@ -1220,7 +1220,7 @@ export default [
       "user": "micahstubbs",
       "createdAt": "2016-03-18T20:56:49Z",
       "updatedAt": "2016-03-18T21:01:54Z",
-      "description": "Browser-zoom robust static foreignObject tooltips"
+      "name": "Browser-zoom robust static foreignObject tooltips"
     }
   }
 ];

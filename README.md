@@ -7,20 +7,30 @@ Render dynamic graphs based on d3 models.
 ## Install
 
 ```bash
-npm install --save react-graph
+yarn add react-graph  --save
 ```
 
 ## Usage (Work In Progress)
 
-```tsx
-import React, { Component } from 'react'
-import { ReactGraph } from 'react-graph'
+```js
+import ReactGraph from 'react-graph';
 
-class Example extends Component {
-  render() {
-    return <ReactGraph {...this.props}/>
-  }
-}
+const Example = () => (
+  <ReactGraph
+    initialState={graphState}
+    nodes={nodes}
+    relationships={relationships}
+    onInspect={setDataOnInspect}
+    onStatsChange={setStats}
+    onStyleVersionChange={setStyleVersion}
+    onStyleChange={setStyles}
+    addedNodes={addedNodes}
+    setGraph={setGraph}
+    hasTruncatedFields={true}
+    hasLegends
+    hasInspector
+  />
+)
 ```
 
 ## License
