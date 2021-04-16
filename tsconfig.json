@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "outDir": "lib/esm",
+      "target": "es5",
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "module": "esnext",
+      "moduleResolution": "node",
+      "downlevelIteration": true,
+      "jsx": "react",
+      "declaration": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "esModuleInterop": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "allowJs": true,
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noFallthroughCasesInSwitch": true,
+      "isolatedModules": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "lib"]
+  }

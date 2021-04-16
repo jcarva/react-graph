@@ -2,14 +2,16 @@
 
 # dependencies
 node_modules
+example/node_modules
 
 # builds
-build
 dist
+lib
+example/build
 .rpt2_cache
 
 # misc
-.idea/
+.idea
 .DS_Store
 .env
 .env.local
