@@ -1,5 +1,5 @@
 <!---![node](./media/react-graph.png) -->
-#React Graph
+# React Graph
 
 Render dynamic graphs based on d3 models with [Neo4j data format](#neo4j-data-format).
 
