@@ -1,9 +1,9 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ReactGraph from 'react-graph';
 import styled from "styled-components";
-import {Sidebar, CollapsableSideBar} from './components/sidebar/Sidebar'
-import {SearchBar} from './components/search-bar/SearchBar'
-import {InspectorBar} from './components/inspector/InspectorBar'
+import { SideBar } from './components/sidebar/Sidebar'
+import { SearchBar } from './components/search-bar/SearchBar'
+import { InspectorBar } from './components/inspector/InspectorBar'
 
 const PageWrapper = styled.div`
   display: flex; 
@@ -144,7 +144,7 @@ const Dashboard = (props: any) => {
   return (
     <PageWrapper>
       <div style={{display: "flex", flex: 1}}>
-        <CollapsableSideBar
+        <SideBar
           nodesLabel={nodesLabel}
           relationshipsLabel={relationshipsLabel}
           handleNodeLabelsCheckBoxChange={handleNodeLabelsCheckBoxChange}
