@@ -1,6 +1,6 @@
 {
   "name": "react-graph",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Render dynamic graphs based on d3 models",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
