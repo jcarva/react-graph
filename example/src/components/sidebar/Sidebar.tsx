@@ -1,36 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { ProSidebar, Menu, SubMenu } from 'react-pro-sidebar';
 import { NodesLabels, RelationshipsLabels } from "./Labels";
-import { ProSidebar, Menu, SubMenu, SidebarContent, SidebarFooter } from 'react-pro-sidebar';
-import npmLogo from "../../assets/images/npm-logo.png";
 import reactGraphLogo from "../../assets/images/react-graph-logo.png";
+import npmLogo from "../../assets/images/npm-logo.png";
+import gitHubLogo from "../../assets/images/github-logo.png";
 import nodesIcon from "../../assets/images/nodes.svg";
 import relationshipsIcon from "../../assets/images/relationships.svg";
-
 import 'react-pro-sidebar/dist/css/styles.css';
-import gitHubLogo from "../../assets/images/github-logo.png";
 
-const LabelsWrapper = styled.div`
-   padding-left: 24px;
-   flex-direction: column;
-   justify-content: flex-start;
-`;
-
-const SidebarWrapper = styled.div`
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 50vh;
-  width: 288px;
-  min-width: 30px;
-  max-width: 288px;
-  min-height: 100%;
-  max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  border-right: solid 1px #ddd;
-`;
-
-const CollapsableSideBarWrapper = styled.div`
+const SideBarWrapper = styled.div`
   box-sizing: border-box;
   height: 50vh;
   min-height: 100%;
@@ -84,38 +63,13 @@ const CollapsableSideBarWrapper = styled.div`
   }
 `;
 
-const Sidebar = (props: any) => {
-  return(
-    <SidebarWrapper>
-      <div style={{ width: "288px", minHeight: "72px", height: "72px", backgroundColor: "#f0f0f0", display: "flex", alignItems: "center", justifyContent: "flex-start", paddingLeft: "16px", boxSizing: "border-box"}}>
-        <img src={reactGraphLogo} width={40} height={40} style={{marginRight: 16}}/>
-        <h2 style={{display: "inline"}}>React Graph</h2>
-      </div>
-      <LabelsWrapper>
-        <NodesLabels
-          nodesLabel={props.nodesLabel}
-          checkedNodeLabels={props.checkedNodeLabels}
-          handleCheckBoxChange={props.handleNodeLabelsCheckBoxChange}
-          styles={props.styles.nodes}
-        />
-        <RelationshipsLabels
-          relationshipsLabel={props.relationshipsLabel}
-          checkedRelationshipsLabels={props.checkedRelationshipsLabels}
-          handleCheckBoxChange={props.handleRelationshipsCheckBoxChange}
-          styles={props.styles.relationships}
-        />
-      </LabelsWrapper>
-    </SidebarWrapper>
-  )
-};
-
-export const CollapsableSideBar = (props: any) => {
+export const SideBar = (props: any) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const handleCollapseClick = () => setCollapsed(!collapsed);
 
   return(
-    <CollapsableSideBarWrapper>
+    <SideBarWrapper>
       <ProSidebar collapsed={collapsed}>
         <div
           style={{
@@ -182,8 +136,6 @@ export const CollapsableSideBar = (props: any) => {
           </div>
         </div>
       </ProSidebar>
-    </CollapsableSideBarWrapper>
+    </SideBarWrapper>
   );
 };
-
-export { Sidebar };

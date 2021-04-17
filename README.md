@@ -1,5 +1,6 @@
 <!---![node](./media/react-graph.png) -->
 #React Graph
+
 Render dynamic graphs based on d3 models with [Neo4j data format](#neo4j-data-format).
 
 [![NPM](https://img.shields.io/npm/v/react-graph.svg)](https://www.npmjs.com/package/react-graph) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
