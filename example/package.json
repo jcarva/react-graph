@@ -18,7 +18,9 @@
     "react-pro-sidebar": "^0.6.0",
     "react-scripts": "3.4.3",
     "react-select": "^4.2.1",
-    "typescript": "link:../node_modules/typescript"
+    "react-svg-inline": "^2.1.1",
+    "typescript": "link:../node_modules/typescript",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
