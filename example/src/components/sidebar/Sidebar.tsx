@@ -39,7 +39,7 @@ const CollapsableSideBarWrapper = styled.div`
   .pro-sidebar {
    .pro-sidebar-inner {
      background: #f0f0f0;
-     // Just used to fix layout with footer component
+
      .pro-sidebar-layout {
       display: flex;
       flex-direction: column;
@@ -73,8 +73,8 @@ const CollapsableSideBarWrapper = styled.div`
       }
       
       .popper-element {
-        // Just used to fix layout with many labels
-        // top: 74px !important;
+        // Fix popper-element on left-top. May cause layout issue for few labels/types
+        //transform: translate3d(80px, 74px, 0) !important;
         .popper-inner {
           background-color: #dcd9d9 !important;
         }
