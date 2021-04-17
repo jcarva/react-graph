@@ -6,8 +6,8 @@ Render dynamic graphs based on d3 models with [Neo4j data format](#neo4j-data-fo
 [![NPM](https://img.shields.io/npm/v/react-graph.svg)](https://www.npmjs.com/package/react-graph) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Live Demo
- - Minimalist
- - Dashboard
+ - [Minimalist](https://how49.csb.app/ )
+ - [Dashboard](https://c1fde.csb.app/)
  
  ## Dashboard View
 ![node](./media/screenshot.png)
