@@ -34,8 +34,8 @@ export const Minimalist = (props) => (
  />
 )
 ```
- - [Minimalist](https://github.com/jcarva/react-graph/tree/main/example/src/Minimalist.tsx)
- - [Dashboard](https://github.com/jcarva/react-graph/tree/main/example/src/Dashboard.tsx) 
+ - [Minimalist](https://github.com/jcarva/react-graph/blob/main/example/src/demos/Minimalist.tsx)
+ - [Dashboard](https://github.com/jcarva/react-graph/blob/main/example/src/demos/Dashboard.tsx) 
 
 ## Features
 
