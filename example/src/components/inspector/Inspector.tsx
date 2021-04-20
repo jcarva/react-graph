@@ -1,17 +1,26 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 // @ts-ignore
 import {
-  StyledStatusBar,
+  StatusBar,
   StatusItem,
   ContextMenuItem,
   CanvasItem,
   NodeItem,
-  RelationshipItem
+  RelationshipItem,
 } from "./Organisms";
 
-export const InspectorComponent = (props: any) => {
+const Inspector = (props: any) => {
   const [graphStyle, setGraphStyle] = useState(props.graphStyle);
-  const [item, setItem] = useState({ id: "", label: "", labels: "", content: {}, nodeCount: 0, relationshipCount: 0, type: "", properties: null});
+  const [item, setItem] = useState({
+    id: "",
+    label: "",
+    labels: "",
+    content: {},
+    nodeCount: 0,
+    relationshipCount: 0,
+    type: "",
+    properties: null,
+  });
   const [type, setType] = useState("");
 
   useEffect(() => {
@@ -34,13 +43,18 @@ export const InspectorComponent = (props: any) => {
 
   const renderInspectorContent = () => {
     if (item && type) {
-      switch(type) {
+      switch (type) {
         case "status-item":
           return <StatusItem item={item} />;
         case "context-menu-item":
           return <ContextMenuItem item={item} />;
         case "canvas":
-          return <CanvasItem item={item} hasTruncatedFields={props.hasTruncatedFields} />;
+          return (
+            <CanvasItem
+              item={item}
+              hasTruncatedFields={props.hasTruncatedFields}
+            />
+          );
         case "node":
           return <NodeItem item={item} graphStyle={graphStyle} />;
         case "relationship":
@@ -54,8 +68,8 @@ export const InspectorComponent = (props: any) => {
   };
 
   return (
-    <StyledStatusBar className="status-bar">
-      {renderInspectorContent()}
-    </StyledStatusBar>
+    <StatusBar className="status-bar">{renderInspectorContent()}</StatusBar>
   );
 };
+
+export { Inspector };

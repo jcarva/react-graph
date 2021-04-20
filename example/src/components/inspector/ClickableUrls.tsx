@@ -1,6 +1,7 @@
 import React from "react";
 
 // credits to https://www.regextester.com/96504, modified though
+/* eslint-disable no-useless-escape */
 const URL_REGEX = /(?:https?|s?ftp|bolt):\/\/(?:(?:[^\s()<>]+|\((?:[^\s()<>]+|(?:\([^\s()<>]+\)))?\))+(?:\((?:[^\s()<>]+|(?:\(?:[^\s()<>]+\)))?\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))?/gi;
 
 interface ClickableUrlsProps {
