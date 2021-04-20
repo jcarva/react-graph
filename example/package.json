@@ -12,6 +12,7 @@
     "@types/react-dom": "link:../node_modules/@types/react-dom",
     "@types/react-select": "^4.0.13",
     "@types/react-svg-inline": "^2.1.1",
+    "@types/styled-components": "^5.1.7",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
