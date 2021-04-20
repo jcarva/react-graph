@@ -19,5 +19,4 @@ const optionalToString = (v: any) =>
     ? v.toString()
     : v;
 
-
-export { numberToUSLocale, optionalToString }
+export { numberToUSLocale, optionalToString };

@@ -10,7 +10,7 @@ Render dynamic graphs based on d3 models with [Neo4j data format](#neo4j-data-fo
  - [Dashboard](https://c1fde.csb.app/)
  
  ## Dashboard View
-![node](./media/dashboard-view.png)
+![node](./media/screenshot.png)
 
 ## Installation
 

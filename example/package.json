@@ -12,6 +12,19 @@
     "@types/react-dom": "link:../node_modules/@types/react-dom",
     "@types/react-select": "^4.0.13",
     "@types/react-svg-inline": "^2.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^4.0.1",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-graph": "link:..",
@@ -20,12 +33,15 @@
     "react-select": "^4.2.1",
     "react-svg-inline": "^2.1.1",
     "typescript": "link:../node_modules/typescript",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "prettier": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint --ext .tsx,.ts .",
+    "lint:fix": "npm run lint -- --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
