@@ -34,8 +34,8 @@ export const Minimalist = (props) => (
  />
 )
 ```
- - [Minimalist](https://github.com/jcarva/react-graph/blob/main/example/src/demos/Minimalist.tsx)
- - [Dashboard](https://github.com/jcarva/react-graph/blob/main/example/src/demos/Dashboard.tsx) 
+ - [Minimalist](https://github.com/jcarva/react-graph/blob/main/example/src/demos/minimalist/Minimalist.tsx)
+ - [Dashboard](https://github.com/jcarva/react-graph/blob/main/example/src/demos/dashboard/Dashboard.tsx)
 
 ## Features
 
@@ -103,7 +103,7 @@ Inspired and helped this awesome project.
 ### Projects
   - [neo4jd3.js](https://github.com/eisman/neo4jd3)
   - [Disjoint Force-Directed Graph](https://observablehq.com/@d3/disjoint-force-directed-graph)
-  - [Neo4j Browser](https://github.com/taddei)
+  - [Neo4j](https://github.com/neo4j)
   
 ### People
   - [Nicolò Taddei](https://github.com/taddei)
