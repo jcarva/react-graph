@@ -1,4 +1,4 @@
 import { DashboardContainer as Dashboard } from "./dashboard/DashboardContainer";
-import { Minimalist } from "./Minimalist";
+import { Minimalist } from "./minimalist/Minimalist";
 
 export { Dashboard, Minimalist };

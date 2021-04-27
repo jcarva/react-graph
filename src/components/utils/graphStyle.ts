@@ -100,11 +100,6 @@ const initGraphStyle = () => {
       "text-color-internal": "#FFFFFF",
     },
     {
-      color: "#404040",
-      "border-color": "#080808",
-      "text-color-internal": "#FFFFFF",
-    },
-    {
       color: "#604A0E",
       "border-color": "#423204",
       "text-color-internal": "#FFFFFF",
@@ -167,6 +162,11 @@ const initGraphStyle = () => {
     {
       color: "#569480",
       "border-color": "#447666",
+      "text-color-internal": "#FFFFFF",
+    },
+    {
+      color: "#404040",
+      "border-color": "#080808",
       "text-color-internal": "#FFFFFF",
     },
   ];
@@ -564,7 +564,7 @@ const initGraphStyle = () => {
   })();
   // @ts-expect-error ts-migrate(7009) FIXME: 'new' expression, whose target lacks a construct s... Remove this comment to see the full error message
   return new GraphStyle();
-}
+};
 
 const createStyleGetter = (type: string, graphStyle: any) => {
   if (type === "node") {
@@ -603,4 +603,4 @@ const createRelationshipStyleGetter = (graphStyle: any) => {
   return createStyleGetter("relationship", graphStyle);
 };
 
-export { initGraphStyle, createNodeStyleGetter, createRelationshipStyleGetter};
+export { initGraphStyle, createNodeStyleGetter, createRelationshipStyleGetter };

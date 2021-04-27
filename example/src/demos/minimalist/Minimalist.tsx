@@ -1,7 +1,7 @@
 import React from "react";
 import ReactGraph from "react-graph";
-import { PageWrapper } from "../components/common/Organisms";
-import { root, nodes, relationships } from "../assets/mocks/random";
+import { PageWrapper } from "../common/Organisms";
+import { root, nodes, relationships } from "../../assets/mocks/random";
 
 const Minimalist = () => (
   <PageWrapper>

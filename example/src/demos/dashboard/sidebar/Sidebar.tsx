@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ProSidebar, Menu, SubMenu } from "react-pro-sidebar";
 import { NodesLabels, RelationshipsLabels } from "./Labels";
 import { SideBarWrapper, Header, Footer } from "./Organisms";
-import nodesIcon from "../../assets/images/nodes.svg";
-import relationshipsIcon from "../../assets/images/relationships.svg";
+import nodesIcon from "../../../assets/images/nodes.svg";
+import relationshipsIcon from "../../../assets/images/relationships.svg";
 import "react-pro-sidebar/dist/css/styles.css";
 
 const SideBar = (props: any) => {

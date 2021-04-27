@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import reactGraphLogo from "../../assets/images/react-graph-logo.png";
-import npmLogo from "../../assets/images/npm-logo.png";
-import gitHubLogo from "../../assets/images/github-logo.png";
+import reactGraphLogo from "../../../assets/images/react-graph-logo.png";
+import npmLogo from "../../../assets/images/npm-logo.png";
+import gitHubLogo from "../../../assets/images/github-logo.png";
 
 export const Header = (props: any) => (
   <HeaderWrapper>
