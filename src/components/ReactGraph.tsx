@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import deepmerge from "deepmerge";
 import { ReactGraphWrapper } from "./organisms/styled";
 import { LegendComponent } from "./organisms/legend/Legend";
-import { GraphContainer } from "./GraphContainer";
+import { Graph } from "./Graph";
 import { InspectorComponent } from "./organisms/inspector/Inspector";
 import neoGraphStyle, {
   createNodeStyleGetter,
@@ -93,30 +93,29 @@ const ReactGraph = (props: any) => {
           onSelectedRelType={onSelectedRelType}
         />
       )}
-      <GraphContainer
-        hasTruncatedFields={props.hasTruncatedFields}
-        initialState={props.initialState}
-        graphStyle={graphStyle}
-        styleVersion={styleVersion}
-        nodes={props.nodes}
-        relationships={props.relationships}
-        fullscreen={false}
-        setGraph={props.setGraph}
-        onGraphModelChange={setStats}
+      <Graph
+        initialNodes={props.initialState.nodes}
+        initialRelationships={props.initialState.relationships}
+        allNodes={props.nodes}
+        allRelationships={props.relationships}
+        addedNodes={props.addedNodes}
         onItemMouseOver={setHoveredItem}
         onItemSelect={setSelectedItem}
-        addedNodes={props.addedNodes}
+        graphStyle={graphStyle}
+        styleVersion={styleVersion}
+        onGraphModelChange={setStats}
+        setGraph={props.setGraph}
         zoomMenu={props.zoomMenu}
       />
       {(props.hasInspector || props.hasLegends) && (
         <InspectorComponent
-          hasTruncatedFields={props.hasTruncatedFields}
           hoveredItem={hoveredItem}
           selectedItem={selectedItem}
           graphStyle={graphStyle}
           updateStyle={updateStyle}
           hasInspector={props.hasInspector}
           hasLegends={props.hasLegends}
+          hasTruncatedFields={props.hasTruncatedFields}
         />
       )}
     </ReactGraphWrapper>

@@ -11,34 +11,15 @@ import { StyledSvgWrapper } from "./organisms/styled";
 import GraphView from "../d3-visualization/components/graphView";
 import "../d3-visualization";
 
-export class GraphComponent extends Component<any, any> {
+class Graph extends Component<any, any> {
   graph: any;
   graphEH: any;
   graphView: any;
   svgElement: any;
   state = {
+    nodesIdMap: {},
     zoomInLimitReached: true,
     zoomOutLimitReached: false,
-  };
-
-  graphInit(el: any) {
-    this.svgElement = el;
-  }
-
-  handleZoomInClick = () => {
-    const limits = this.graphView.zoomIn();
-    this.setState({
-      zoomInLimitReached: limits.zoomInLimit,
-      zoomOutLimitReached: limits.zoomOutLimit,
-    });
-  };
-
-  handleZoomOutClick = () => {
-    const limits = this.graphView.zoomOut();
-    this.setState({
-      zoomInLimitReached: limits.zoomInLimit,
-      zoomOutLimitReached: limits.zoomOutLimit,
-    });
   };
 
   componentDidMount() {
@@ -48,51 +29,22 @@ export class GraphComponent extends Component<any, any> {
     }
   }
 
-  initGraphView() {
-    if (!this.graphView) {
-      const measureSize = () => {
-        return {
-          width: this.svgElement ? this.svgElement.offsetWidth : "50%",
-          height: this.svgElement.parentNode.offsetHeight,
-        };
-      };
-      this.graph = createGraph(this.props.nodes, this.props.relationships);
-      this.graphView = new GraphView(
-        this.svgElement,
-        measureSize,
-        this.graph,
-        this.props.graphStyle
-      );
-      this.graphEH = new GraphEventHandler(
-        this.graph,
-        this.graphView,
-        this.props.getNodeNeighbours,
-        this.props.onItemMouseOver,
-        this.props.onItemSelect,
-        this.props.onGraphModelChange
-      );
-      this.graphEH.bindEventHandlers();
-      this.props.onGraphModelChange(getGraphStats(this.graph));
-      this.graphView.resize();
-      this.graphView.update();
-    }
-  }
-
   componentDidUpdate(prevProps: any) {
     if (prevProps.styleVersion !== this.props.styleVersion) {
       this.graphView.update();
     }
+    // TODO: Enable on v2
     if (this.props.fullscreen !== prevProps.fullscreen) {
       this.graphView.resize();
     }
-    if (prevProps.nodes !== this.props.nodes) {
+    if (prevProps.initialNodes !== this.props.initialNodes) {
       this.graph.resetNodes();
-      this.graph.addNodes(mapNodes(this.props.nodes));
+      this.graph.addNodes(mapNodes(this.props.initialNodes));
     }
-    if (prevProps.relationships !== this.props.relationships) {
+    if (prevProps.initialRelationships !== this.props.initialRelationships) {
       this.graph.resetRelationships();
       this.graph.addRelationships(
-        mapRelationships(this.props.relationships, this.graph)
+        mapRelationships(this.props.initialRelationships, this.graph)
       );
     }
     if (prevProps.addedNodes !== this.props.addedNodes) {
@@ -127,6 +79,108 @@ export class GraphComponent extends Component<any, any> {
     }
   }
 
+  componentWillReceiveProps(nextProps: any) {
+    if (this.props.allNodes !== nextProps.allNodes) {
+      const nodesIdMap = {};
+      nextProps.allNodes.forEach((x: any) => (nodesIdMap[x.id] = x));
+      this.setState({ nodesIdMap });
+    }
+  }
+
+  graphInit(el: any) {
+    this.svgElement = el;
+  }
+
+  initGraphView() {
+    if (!this.graphView) {
+      const measureSize = () => {
+        return {
+          width: this.svgElement ? this.svgElement.offsetWidth : "50%",
+          height: this.svgElement.parentNode.offsetHeight,
+        };
+      };
+      this.graph = createGraph(
+        this.props.initialNodes,
+        this.props.initialRelationships
+      );
+      this.graphView = new GraphView(
+        this.svgElement,
+        measureSize,
+        this.graph,
+        this.props.graphStyle
+      );
+      this.graphEH = new GraphEventHandler(
+        this.graph,
+        this.graphView,
+        this.getNodeNeighbours,
+        this.props.onItemMouseOver,
+        this.props.onItemSelect,
+        this.props.onGraphModelChange
+      );
+      this.graphEH.bindEventHandlers();
+      this.props.onGraphModelChange(getGraphStats(this.graph));
+      this.graphView.resize();
+      this.graphView.update();
+    }
+  }
+
+  // TODO: Optimize by filtering using currentNeighbourIds
+  // @ts-ignore
+  getNodeNeighbours = (
+    currentNode: any,
+    _currentNeighbourIds = [],
+    callback: any
+  ) => {
+    const { id } = currentNode;
+    const relationshipsWithNeighbours = this.props.allRelationships.filter(
+      (rel: { startNodeId: any; endNodeId: any }) =>
+        rel.startNodeId === id || rel.endNodeId === id
+    );
+
+    // @ts-ignore
+    const neighboursList: any[] = [];
+    relationshipsWithNeighbours.map(
+      (rel: { startNodeId: string | number; endNodeId: string | number }) => {
+        // @ts-ignore
+        if (rel.startNodeId === id) {
+          // @ts-ignore
+          neighboursList.push(this.state.nodesIdMap[id]);
+          // @ts-ignore
+          neighboursList.push(this.state.nodesIdMap[rel.endNodeId]);
+        }
+
+        // @ts-ignore
+        if (rel.endNodeId === id) {
+          // @ts-ignore
+          neighboursList.push(this.state.nodesIdMap[id]);
+          // @ts-ignore
+          neighboursList.push(this.state.nodesIdMap[rel.startNodeId]);
+        }
+      }
+    );
+
+    callback(null, {
+      nodes: neighboursList,
+      relationships: relationshipsWithNeighbours,
+    });
+  };
+
+  handleZoomInClick = () => {
+    const limits = this.graphView.zoomIn();
+    this.setState({
+      zoomInLimitReached: limits.zoomInLimit,
+      zoomOutLimitReached: limits.zoomOutLimit,
+    });
+  };
+
+  handleZoomOutClick = () => {
+    const limits = this.graphView.zoomOut();
+    this.setState({
+      zoomInLimitReached: limits.zoomInLimit,
+      zoomOutLimitReached: limits.zoomOutLimit,
+    });
+  };
+
   render() {
     return (
       <StyledSvgWrapper>
@@ -142,3 +196,5 @@ export class GraphComponent extends Component<any, any> {
     );
   }
 }
+
+export { Graph };
