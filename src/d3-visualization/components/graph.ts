@@ -1,4 +1,4 @@
-export default class Graph {
+class Graph {
   _nodes: any;
   _relationships: any[];
   expandedNodeMap: any;
@@ -249,3 +249,5 @@ class NodePair {
     return `${this.nodeA.id}:${this.nodeB.id}`;
   }
 }
+
+export { Graph };

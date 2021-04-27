@@ -1,7 +1,7 @@
 import { optionalToString } from "./utils";
-import Graph from "../../d3-visualization/components/graph";
-import Node from "../../d3-visualization/components/node";
-import Relationship from "../../d3-visualization/components/relationship";
+import { Graph } from "../../d3-visualization/components/graph";
+import { Node } from "../../d3-visualization/components/node";
+import { Relationship } from "../../d3-visualization/components/relationship";
 
 const mapProperties = (_: any) => Object.assign({}, ...stringifyValues(_));
 const stringifyValues = (obj: any) =>
@@ -39,6 +39,7 @@ export function mapRelationships(relationships: any, graph: any) {
 export function getGraphStats(graph: any) {
   const labelStats: any = {};
   const relTypeStats: any = {};
+
   graph.nodes().forEach((node: any) => {
     node.labels.forEach((label: any) => {
       if (labelStats["*"]) {
@@ -63,6 +64,7 @@ export function getGraphStats(graph: any) {
       }
     });
   });
+
   graph.relationships().forEach((rel: any) => {
     if (relTypeStats["*"]) {
       relTypeStats["*"].count = relTypeStats["*"].count + 1;
@@ -85,5 +87,6 @@ export function getGraphStats(graph: any) {
       };
     }
   });
+
   return { labels: labelStats, relTypes: relTypeStats };
 }

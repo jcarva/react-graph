@@ -1,5 +1,5 @@
-// GOOD
 import d3 from "d3";
+
 export default function clickHandler() {
   const cc = function (selection: any) {
     // euclidean distance

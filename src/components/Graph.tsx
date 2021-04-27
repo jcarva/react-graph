@@ -6,9 +6,9 @@ import {
   mapRelationships,
 } from "./utils/mapper";
 import { GraphEventHandler } from "./utils/GraphEventHandler";
-import { ZoomControls } from "./organisms/zoom-controls/ZoomControls";
+import { GraphView } from "../d3-visualization/components/graphView";
 import { StyledSvgWrapper } from "./organisms/styled";
-import GraphView from "../d3-visualization/components/graphView";
+import { ZoomControls } from "./organisms/zoom-controls/ZoomControls";
 import "../d3-visualization";
 
 class Graph extends Component<any, any> {
@@ -136,6 +136,8 @@ class Graph extends Component<any, any> {
       (rel: { startNodeId: any; endNodeId: any }) =>
         rel.startNodeId === id || rel.endNodeId === id
     );
+
+    console.log("import");
 
     // @ts-ignore
     const neighboursList: any[] = [];

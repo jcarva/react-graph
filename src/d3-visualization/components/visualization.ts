@@ -1,6 +1,6 @@
 // @ts-ignore
 import d3 from "d3";
-import NeoD3Geometry from './graphGeometry'
+import { GraphGeometry } from './graphGeometry'
 import * as vizRenderers from '../renders/init'
 import { menu as menuRenderer } from '../renders/menu'
 import vizClickHandler from '../utils/clickHandler'
@@ -28,7 +28,7 @@ const vizFn = function(
     .attr('transform', 'scale(1)')
 
   const container = baseGroup.append('g').attr('id', 'my-zoom-focus');
-  const geometry = new NeoD3Geometry(style)
+  const geometry = new GraphGeometry(style)
 
   // This flags that a panning is ongoing and won't trigger
   // 'canvasClick' event when panning ends.

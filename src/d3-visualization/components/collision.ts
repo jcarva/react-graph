@@ -6,6 +6,7 @@ const collision = {
     return Array.from(nodes).map((n) => q.visit(collide(n)));
   },
 };
+
 const collide = (node: any) => {
   let r = node.radius + 10;
   const nx1 = node.x - r;

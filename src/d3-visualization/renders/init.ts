@@ -1,4 +1,4 @@
-import Renderer from "../components/renderer";
+import { Renderer } from "../components/renderer";
 const noop = function () {};
 
 const nodeRingStrokeSize = 8;

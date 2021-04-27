@@ -1,4 +1,4 @@
-export default class Node {
+class Node {
   id: any;
   labels: any;
   propertyList: any;
@@ -36,3 +36,5 @@ export default class Node {
     return rels.length;
   }
 }
+
+export { Node };
