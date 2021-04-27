@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { createGraph, getGraphStats, mapNodes, mapRelationships } from "./utils/mapper";
+import {
+  createGraph,
+  getGraphStats,
+  mapNodes,
+  mapRelationships,
+} from "./utils/mapper";
 import { GraphEventHandler } from "./utils/GraphEventHandler";
 import { ZoomControls } from "./organisms/zoom-controls/ZoomControls";
 import { StyledSvgWrapper } from "./organisms/styled";

@@ -1,34 +1,21 @@
 import React, { Component } from "react";
 import { GraphComponent } from "./Graph";
-import { deduplicateNodes } from "./utils/utils";
 
+// TODO: Update to function component
 class GraphContainer extends Component<any, any> {
   constructor(props: any) {
     super(props);
-    const nodesIdMap = {};
-    // @ts-ignore
-    this.props.nodes.map((x: any) => {
-      if (!nodesIdMap[x.id]) nodesIdMap[x.id] = x;
-    });
-    const relationships = this.props.relationships;
-    const nodes = deduplicateNodes(this.props.nodes);
-
     this.state = {
-      nodes,
-      relationships,
-      nodesIdMap: nodesIdMap,
+      nodesIdMap: {},
     };
   }
 
-  componentWillReceiveProps() {
-    const nodesIdMap = {};
-    this.props.nodes.map((x: any) => {
-      if (!nodesIdMap[x.id]) nodesIdMap[x.id] = x;
-    });
-    const nodes = deduplicateNodes(this.props.nodes);
-    const relationships = this.props.relationships;
-    console.log("nodesIdMap: ", { nodes, relationships, nodesIdMap });
-    this.setState({ nodes, relationships, nodesIdMap });
+  componentWillReceiveProps(nextProps: any) {
+    if (this.props.nodes !== nextProps.nodes) {
+      const nodesIdMap = {};
+      nextProps.nodes.forEach((x: any) => (nodesIdMap[x.id] = x));
+      this.setState({ nodesIdMap });
+    }
   }
 
   // TODO: Optimize by filtering using currentNeighbourIds
