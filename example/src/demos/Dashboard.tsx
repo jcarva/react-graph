@@ -4,6 +4,14 @@ import { PageWrapper } from "../components/common/Organisms";
 import { SideBar } from "../components/sidebar/Sidebar";
 import { SearchBar } from "../components/search-bar/SearchBar";
 import { InfoPanel } from "../components/inspector/InfoPanel";
+import styled from "styled-components";
+
+export const ReactGraphWrapper = styled.div`
+  box-sizing: border-box;
+  height: 50vh;
+  min-height: 92%;
+  max-height: 100%;
+`;
 
 const Dashboard = (props: any) => {
   const [graphState, setGraphState] = useState({
@@ -21,6 +29,8 @@ const Dashboard = (props: any) => {
     selectedItem: {},
   });
   const [styles, setStyles] = useState({ nodes: {}, relationships: {} });
+  // eslint-disable-next-line no-unused-vars
+  const [styleVersion, setStyleVersion] = useState(0);
 
   const nodesIdMap = useMemo(() => {
     const nodesMap = {};
@@ -164,18 +174,19 @@ const Dashboard = (props: any) => {
           checkedRelationshipsLabels={checkedRelationshipsLabels}
           styles={styles}
         />
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 1 }}>
           <SearchBar
             selectOptions={selectOptions}
             selectedOptions={selectedOptions}
             handleSelectChange={handleSelectChange}
           />
-          <div style={{ flex: 1, height: "50vh" }}>
+          <ReactGraphWrapper>
             <ReactGraph
               initialState={graphState}
               nodes={props.nodes}
               relationships={props.relationships}
               onInspect={setDataOnInspect}
+              onStyleVersionChange={setStyleVersion}
               onStyleChange={setStyles}
               addedNodes={addedNodes}
               width="100%"
@@ -183,7 +194,7 @@ const Dashboard = (props: any) => {
               hasLegends
               hasTruncatedFields
             />
-          </div>
+          </ReactGraphWrapper>
         </div>
       </div>
       <InfoPanel dataOnInspect={dataOnInspect} styles={styles} />

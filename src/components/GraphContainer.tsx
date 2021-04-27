@@ -3,13 +3,12 @@ import { GraphComponent } from "./Graph";
 import { deduplicateNodes } from "./utils/utils";
 
 class GraphContainer extends Component<any, any> {
-  totalNodesHash: any;
   constructor(props: any) {
     super(props);
-    this.totalNodesHash = {};
+    const nodesIdMap = {};
     // @ts-ignore
     this.props.nodes.map((x: any) => {
-      if (!this.totalNodesHash[x.id]) this.totalNodesHash[x.id] = x;
+      if (!nodesIdMap[x.id]) nodesIdMap[x.id] = x;
     });
     const relationships = this.props.relationships;
     const nodes = deduplicateNodes(this.props.nodes);
@@ -17,12 +16,28 @@ class GraphContainer extends Component<any, any> {
     this.state = {
       nodes,
       relationships,
+      nodesIdMap: nodesIdMap,
     };
+  }
+
+  componentWillReceiveProps() {
+    const nodesIdMap = {};
+    this.props.nodes.map((x: any) => {
+      if (!nodesIdMap[x.id]) nodesIdMap[x.id] = x;
+    });
+    const nodes = deduplicateNodes(this.props.nodes);
+    const relationships = this.props.relationships;
+    console.log("nodesIdMap: ", { nodes, relationships, nodesIdMap });
+    this.setState({ nodes, relationships, nodesIdMap });
   }
 
   // TODO: Optimize by filtering using currentNeighbourIds
   // @ts-ignore
-  getNeighbours(currentNode: any, currentNeighbourIds = [], callback: any) {
+  getNeighbours = (
+    currentNode: any,
+    _currentNeighbourIds = [],
+    callback: any
+  ) => {
     const { id } = currentNode;
     const relationshipsWithNeighbours = this.props.relationships.filter(
       (rel: { startNodeId: any; endNodeId: any }) =>
@@ -36,17 +51,17 @@ class GraphContainer extends Component<any, any> {
         // @ts-ignore
         if (rel.startNodeId === id) {
           // @ts-ignore
-          neighboursList.push(this.totalNodesHash[id]);
+          neighboursList.push(this.state.nodesIdMap[id]);
           // @ts-ignore
-          neighboursList.push(this.totalNodesHash[rel.endNodeId]);
+          neighboursList.push(this.state.nodesIdMap[rel.endNodeId]);
         }
 
         // @ts-ignore
         if (rel.endNodeId === id) {
           // @ts-ignore
-          neighboursList.push(this.totalNodesHash[id]);
+          neighboursList.push(this.state.nodesIdMap[id]);
           // @ts-ignore
-          neighboursList.push(this.totalNodesHash[rel.startNodeId]);
+          neighboursList.push(this.state.nodesIdMap[rel.startNodeId]);
         }
       }
     );
@@ -55,7 +70,7 @@ class GraphContainer extends Component<any, any> {
       nodes: neighboursList,
       relationships: relationshipsWithNeighbours,
     });
-  }
+  };
 
   render() {
     return (
@@ -63,7 +78,7 @@ class GraphContainer extends Component<any, any> {
         fullscreen={this.props.fullscreen}
         nodes={this.props.initialState.nodes}
         relationships={this.props.initialState.relationships}
-        getNodeNeighbours={this.getNeighbours.bind(this)}
+        getNodeNeighbours={this.getNeighbours}
         onItemMouseOver={this.props.onItemMouseOver}
         onItemSelect={this.props.onItemSelect}
         graphStyle={this.props.graphStyle}
@@ -77,15 +92,3 @@ class GraphContainer extends Component<any, any> {
   }
 }
 export { GraphContainer };
-
-// "lib": ["es6", "dom", "dom.iterable", "esnext"],
-// "allowSyntheticDefaultImports": true,
-//     "allowJs": true,
-//     "skipLibCheck": true,
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "noFallthroughCasesInSwitch": true,
-//     "resolveJsonModule": true,
-//     "isolatedModules": true,
-//     "noEmit": true
-// "tslib": "1.10.0"

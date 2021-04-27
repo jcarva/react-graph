@@ -20,6 +20,17 @@ export const StyledTruncatedMessage = styled.span`
   color: orange;
 `;
 
+export const ReactGraphWrapper = styled.div`
+  display: flex;
+  width: ${(props: any) =>
+    props.width || "500px"}; // TODO: Use types default value
+  height: ${(props: any) =>
+    props.height || "500px"}; // TODO: Use types default value
+  justify-content: center;
+  position: relative;
+  text-align: center;
+`;
+
 export const StyledSvgWrapper = styled.div`
   line-height: 0;
   height: 100%;

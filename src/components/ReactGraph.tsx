@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import deepmerge from "deepmerge";
-import styled from "styled-components";
+import { ReactGraphWrapper } from "./organisms/styled";
 import { LegendComponent } from "./organisms/legend/Legend";
 import { GraphContainer } from "./GraphContainer";
 import { InspectorComponent } from "./organisms/inspector/Inspector";
@@ -8,17 +8,6 @@ import neoGraphStyle, {
   createNodeStyleGetter,
   createRelationshipStyleGetter,
 } from "./utils/graphStyle";
-
-const ReactGraphWrapper = styled.div`
-  display: flex;
-  width: ${(props: any) =>
-    props.width || "500px"}; // TODO: Use types default value
-  height: ${(props: any) =>
-    props.height || "500px"}; // TODO: Use types default value
-  justify-content: center;
-  position: relative;
-  text-align: center;
-`;
 
 const ReactGraph = (props: any) => {
   const [graphStyle, setGraphStyle] = useState(neoGraphStyle());
@@ -30,7 +19,7 @@ const ReactGraph = (props: any) => {
   useEffect(() => {
     if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
     if (props.onStyleChange) props.onStyleChange(getStyles()); // TODO: Use types default value
-  }, []);
+  }, [props.nodes, props.relationships]);
 
   useEffect(() => {
     if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
@@ -135,7 +124,3 @@ const ReactGraph = (props: any) => {
 };
 
 export { ReactGraph };
-
-// MATCH (n:api {name: "AMfB ACS Main"}) RETURN n | get an specific node my name
-// MATCH (n)-[r]->(m) RETURN n,r,m  | get all node which has edges along with their properties
-// MATCH (n) WHERE NOT (n)--() RETURN n | get nodes without edges

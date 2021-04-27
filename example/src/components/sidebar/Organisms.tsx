@@ -45,7 +45,11 @@ export const LabelsList = (props: any) => {
             key={label}
             // @ts-ignore
             borderRadius={props.borderRadius}
-            style={props.styles && props.styles ? props.styles[label] : {}}
+            style={
+              props.styles && props.styles[label]
+                ? props.styles[label]
+                : { color: "#FFFFFF", background: "#A5ABB6" }
+            }
           >
             <Label>
               <CheckBox
@@ -123,6 +127,10 @@ export const SideBarWrapper = styled.div`
         }
 
         .popper-element {
+          display: ${(props) => {
+            // @ts-ignore
+            return props.isCollapsed ? "inherit" : "none";
+          }};
           // Fix popper-element on left-top. May cause layout issue for few labels/types
           //transform: translate3d(80px, 74px, 0) !important;
           .popper-inner {
