@@ -1,6 +1,6 @@
 import { selectorStringToArray, selectorArrayToString } from "./utils";
 
-export default function neoGraphStyle() {
+const initGraphStyle = () => {
   const defaultStyle = {
     node: {
       diameter: "50px",
@@ -20,12 +20,16 @@ export default function neoGraphStyle() {
       caption: "<type>",
     },
   };
+
   const defaultSizes = [
     {
       diameter: "10px",
     },
     {
       diameter: "20px",
+    },
+    {
+      diameter: "35px",
     },
     {
       diameter: "50px",
@@ -37,6 +41,7 @@ export default function neoGraphStyle() {
       diameter: "80px",
     },
   ];
+
   const defaultIconCodes = [
     {
       "icon-code": "a",
@@ -60,6 +65,7 @@ export default function neoGraphStyle() {
       "icon-code": "k",
     },
   ];
+
   const defaultArrayWidths = [
     {
       "shaft-width": "1px",
@@ -86,10 +92,26 @@ export default function neoGraphStyle() {
       "shaft-width": "38px",
     },
   ];
+
   const defaultColors = [
+    {
+      color: "#A5ABB6",
+      "border-color": "#9AA1AC",
+      "text-color-internal": "#FFFFFF",
+    },
+    {
+      color: "#404040",
+      "border-color": "#080808",
+      "text-color-internal": "#FFFFFF",
+    },
     {
       color: "#604A0E",
       "border-color": "#423204",
+      "text-color-internal": "#FFFFFF",
+    },
+    {
+      color: "#8A2BE2",
+      "border-color": "#4B0082",
       "text-color-internal": "#FFFFFF",
     },
     {
@@ -148,6 +170,7 @@ export default function neoGraphStyle() {
       "text-color-internal": "#FFFFFF",
     },
   ];
+
   const Selector = (function () {
     function Selector(this: any, tag1: any, classes1: any) {
       this.tag = tag1;
@@ -268,8 +291,9 @@ export default function neoGraphStyle() {
           return rule.props.color;
         });
       const index =
-        // @ts-expect-error ts-migrate(2365) FIXME: Operator '>' cannot be applied to types 'number' a... Remove this comment to see the full error message
-        usedColors.length - 1 > defaultColors ? 0 : usedColors.length - 1;
+        usedColors.length - 1 > defaultColors.length - 1
+          ? 0
+          : usedColors.length - 1;
       return defaultColors[index];
     };
 
@@ -571,10 +595,12 @@ const createStyleGetter = (type: string, graphStyle: any) => {
   throw new Error(`Unsupported argument: ${type}`);
 };
 
-export const createNodeStyleGetter = (graphStyle: any) => {
+const createNodeStyleGetter = (graphStyle: any) => {
   return createStyleGetter("node", graphStyle);
 };
 
-export const createRelationshipStyleGetter = (graphStyle: any) => {
+const createRelationshipStyleGetter = (graphStyle: any) => {
   return createStyleGetter("relationship", graphStyle);
 };
+
+export { initGraphStyle, createNodeStyleGetter, createRelationshipStyleGetter};

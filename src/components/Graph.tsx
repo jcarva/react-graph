@@ -27,6 +27,10 @@ class Graph extends Component<any, any> {
       this.initGraphView();
       this.graph && this.props.setGraph && this.props.setGraph(this.graph);
     }
+
+    const nodesIdMap = {};
+    this.props.allNodes.forEach((x: any) => (nodesIdMap[x.id] = x));
+    this.setState({ nodesIdMap });
   }
 
   componentDidUpdate(prevProps: any) {
@@ -63,8 +67,7 @@ class Graph extends Component<any, any> {
           (obj: any) => !(obj.id in currentAddedNodesIds)
         );
 
-        // eslint-disable-next-line array-callback-return
-        mapNodes(removedNodes).map((removedNode: any) => {
+        mapNodes(removedNodes).forEach((removedNode: any) => {
           const node = this.graph.nodeMap[removedNode.id];
           if (node) {
             this.graph.removeConnectedRelationships(node);
@@ -87,7 +90,7 @@ class Graph extends Component<any, any> {
     }
   }
 
-  graphInit(el: any) {
+  initGraph(el: any) {
     this.svgElement = el;
   }
 
@@ -95,7 +98,7 @@ class Graph extends Component<any, any> {
     if (!this.graphView) {
       const measureSize = () => {
         return {
-          width: this.svgElement ? this.svgElement.offsetWidth : "50%",
+          width: this.svgElement.parentNode.offsetWidth,
           height: this.svgElement.parentNode.offsetHeight,
         };
       };
@@ -125,7 +128,6 @@ class Graph extends Component<any, any> {
   }
 
   // TODO: Optimize by filtering using currentNeighbourIds
-  // @ts-ignore
   getNodeNeighbours = (
     currentNode: any,
     _currentNeighbourIds = [],
@@ -137,25 +139,15 @@ class Graph extends Component<any, any> {
         rel.startNodeId === id || rel.endNodeId === id
     );
 
-    console.log("import");
-
-    // @ts-ignore
     const neighboursList: any[] = [];
     relationshipsWithNeighbours.map(
       (rel: { startNodeId: string | number; endNodeId: string | number }) => {
-        // @ts-ignore
         if (rel.startNodeId === id) {
-          // @ts-ignore
           neighboursList.push(this.state.nodesIdMap[id]);
-          // @ts-ignore
           neighboursList.push(this.state.nodesIdMap[rel.endNodeId]);
         }
-
-        // @ts-ignore
         if (rel.endNodeId === id) {
-          // @ts-ignore
           neighboursList.push(this.state.nodesIdMap[id]);
-          // @ts-ignore
           neighboursList.push(this.state.nodesIdMap[rel.startNodeId]);
         }
       }
@@ -186,7 +178,7 @@ class Graph extends Component<any, any> {
   render() {
     return (
       <StyledSvgWrapper>
-        <svg className="react-graph" ref={this.graphInit.bind(this)} />
+        <svg className="react-graph" ref={this.initGraph.bind(this)} />
         <ZoomControls
           zoomMenu={this.props.zoomMenu}
           onZoomInClick={this.handleZoomInClick}

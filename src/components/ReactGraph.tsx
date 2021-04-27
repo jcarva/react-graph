@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import deepmerge from "deepmerge";
+import {
+  initGraphStyle,
+  createNodeStyleGetter,
+  createRelationshipStyleGetter,
+} from "./utils/graphStyle";
 import { ReactGraphWrapper } from "./organisms/styled";
 import { LegendComponent } from "./organisms/legend/Legend";
 import { Graph } from "./Graph";
 import { InspectorComponent } from "./organisms/inspector/Inspector";
-import neoGraphStyle, {
-  createNodeStyleGetter,
-  createRelationshipStyleGetter,
-} from "./utils/graphStyle";
 
 const ReactGraph = (props: any) => {
-  const [graphStyle, setGraphStyle] = useState(neoGraphStyle());
+  const [graphStyle, setGraphStyle] = useState(initGraphStyle());
   const [styleVersion, setStyleVersion] = useState(0);
   const [selectedItem, setSelectedItem] = useState({});
   const [hoveredItem, setHoveredItem] = useState({});
