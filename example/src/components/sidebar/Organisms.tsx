@@ -127,10 +127,6 @@ export const SideBarWrapper = styled.div`
         }
 
         .popper-element {
-          display: ${(props) => {
-            // @ts-ignore
-            return props.isCollapsed ? "inherit" : "none";
-          }};
           // Fix popper-element on left-top. May cause layout issue for few labels/types
           //transform: translate3d(80px, 74px, 0) !important;
           .popper-inner {

@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
 import ReactGraph from "react-graph";
-import { PageWrapper } from "../components/common/Organisms";
-import { SideBar } from "../components/sidebar/Sidebar";
-import { SearchBar } from "../components/search-bar/SearchBar";
-import { InfoPanel } from "../components/inspector/InfoPanel";
+import { PageWrapper } from "../../components/common/Organisms";
+import { SideBar } from "../../components/sidebar/Sidebar";
+import { SearchBar } from "../../components/search-bar/SearchBar";
+import { InfoPanel } from "../../components/inspector/InfoPanel";
 import styled from "styled-components";
 
 export const ReactGraphWrapper = styled.div`
