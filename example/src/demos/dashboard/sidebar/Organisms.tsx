@@ -127,6 +127,8 @@ export const SideBarWrapper = styled.div`
         }
 
         .popper-element {
+          // Fix flickering .popper-element when expand sidebar
+          display: ${(props: any) => (!props.isCollapsed ? "none" : "inherit")};
           // Fix popper-element on left-top. May cause layout issue for few labels/types
           //transform: translate3d(80px, 74px, 0) !important;
           .popper-inner {
@@ -141,6 +143,7 @@ export const SideBarWrapper = styled.div`
 export const LabelsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 270px;
 
   h3 {
     margin: 0 0 8px 0;

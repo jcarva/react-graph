@@ -12,7 +12,8 @@ const SideBar = (props: any) => {
   const toggle = () => setIsCollapsed(!isCollapsed);
 
   return (
-    <SideBarWrapper>
+    // @ts-ignore
+    <SideBarWrapper isCollapsed={isCollapsed}>
       <ProSidebar collapsed={isCollapsed}>
         <Header onClick={toggle} />
         <Menu iconShape="circle">
