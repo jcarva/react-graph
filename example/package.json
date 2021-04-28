@@ -27,6 +27,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.4",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-graph": "link:..",
