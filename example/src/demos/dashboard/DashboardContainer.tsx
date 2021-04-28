@@ -16,17 +16,19 @@ const DashboardContainer = () => {
   useEffect(() => {
     axios
       .get(nodesUrl)
+      // @ts-ignore
       .then(({ data: nodesData }) => {
         axios
           .get(relationshipssUrl)
+          // @ts-ignore
           .then(({ data: relationshipsData }) => {
             // @ts-ignore
             setGraphState(graphDataFilter(nodesData, relationshipsData));
           })
           // eslint-disable-next-line no-console
-          .catch((err) => console.log(err));
+          .catch((err: any) => console.log(err));
       })
-      .catch((err) => {
+      .catch((err: any) => {
         // @ts-ignore
         setGraphState(graphDataFilter(nodes, relationships));
         console.log(err);
