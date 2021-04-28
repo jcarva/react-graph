@@ -61,7 +61,8 @@
   "keywords": [
     "react",
     "graph",
-    "d3"
+    "d3",
+    "neo4j"
   ],
   "author": "Jaelson Carvalho <jaelsoncarvalhojr@gmail.com> (https://github.com/jcarva)",
   "license": "GPL-3.0",

@@ -1,4 +1,4 @@
-export default class Relationship {
+class Relationship {
   id: any;
   propertyList: any;
   propertyMap: any;
@@ -31,3 +31,5 @@ export default class Relationship {
     return this.source === this.target;
   }
 }
+
+export { Relationship };

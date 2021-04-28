@@ -1,4 +1,4 @@
-export default class Renderer {
+class Renderer {
   onGraphChange: any = null;
   onTick: any = null;
   constructor(opts: any) {
@@ -11,3 +11,5 @@ export default class Renderer {
     }
   }
 }
+
+export { Renderer };

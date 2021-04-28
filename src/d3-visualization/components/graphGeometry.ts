@@ -1,11 +1,11 @@
 import PairwiseArcsRelationshipRouting from '../utils/pairwiseArcsRelationshipRouting'
 import measureText from '../utils/textMeasurement'
 
-export default class NeoD3Geometry {
-  relationshipRouting: any
-  style: any
+class GraphGeometry {
+  relationshipRouting: any;
+  style: any;
   constructor(style: any) {
-    this.style = style
+    this.style = style;
     this.relationshipRouting = new PairwiseArcsRelationshipRouting(this.style)
   }
 
@@ -17,7 +17,7 @@ export default class NeoD3Geometry {
 
   formatRelationshipCaptions(relationships: any[]) {
     return (() => {
-      const result = []
+      const result = [];
       for (const relationship of Array.from(relationships)) {
         const template = this.style.forRelationship(relationship).get('caption')
         result.push(
@@ -39,9 +39,9 @@ export default class NeoD3Geometry {
   }
 
   onGraphChange(graph: any) {
-    this.setNodeRadii(graph.nodes())
-    this.formatNodeCaptions(graph.nodes())
-    this.formatRelationshipCaptions(graph.relationships())
+    this.setNodeRadii(graph.nodes());
+    this.formatNodeCaptions(graph.nodes());
+    this.formatRelationshipCaptions(graph.relationships());
     return this.relationshipRouting.measureRelationshipCaptions(
       graph.relationships()
     )
@@ -52,20 +52,22 @@ export default class NeoD3Geometry {
   }
 }
 
-const square = (distance: any) => distance * distance
+const square = (distance: any) => distance * distance;
+
 const addShortenedNextWord = (line: any, word: any, measure: any) => {
-  const result = []
+  const result = [];
   while (!(word.length <= 2)) {
-    word = `${word.substr(0, word.length - 2)}\u2026`
+    word = `${word.substr(0, word.length - 2)}\u2026`;
     if (measure(word) < line.remainingWidth) {
-      line.text += ` ${word}`
+      line.text += ` ${word}`;
       break
     } else {
       result.push(undefined)
     }
   }
   return result
-}
+};
+
 const noEmptyLines = function(lines: any[]) {
   for (const line of Array.from(lines)) {
     if (line.text.length === 0) {
@@ -73,7 +75,7 @@ const noEmptyLines = function(lines: any[]) {
     }
   }
   return true
-}
+};
 
 const fitCaptionIntoCircle = function(node: any, style: any) {
   const template = style.forNode(node).get('caption')
@@ -125,12 +127,12 @@ const fitCaptionIntoCircle = function(node: any, style: any) {
       addShortenedNextWord(lines[lineCount - 1], words[iWord], measure)
     }
     return [lines, iWord]
-  }
+  };
 
   let consumedWords = 0
-  const maxLines = (node.radius * 2) / fontSize
+  const maxLines = (node.radius * 2) / fontSize;
 
-  let lines = [emptyLine(1, 0)]
+  let lines = [emptyLine(1, 0)];
   for (
     let lineCount = 1, end = maxLines, asc = end >= 1;
     asc ? lineCount <= end : lineCount >= end;
@@ -138,13 +140,15 @@ const fitCaptionIntoCircle = function(node: any, style: any) {
   ) {
     const [candidateLines, candidateWords] = Array.from(
       fitOnFixedNumberOfLines(lineCount)
-    )
+    );
     if (noEmptyLines(candidateLines)) {
-      ;[lines, consumedWords] = Array.from([candidateLines, candidateWords])
+      [lines, consumedWords] = Array.from([candidateLines, candidateWords])
     }
     if (consumedWords >= words.length) {
       return lines
     }
   }
   return lines
-}
+};
+
+export { GraphGeometry };

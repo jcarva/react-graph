@@ -1,5 +1,5 @@
 import d3 from "d3";
-import Renderer from "../components/renderer";
+import { Renderer } from "../components/renderer";
 import icons from "./icons";
 
 const noop = function () {};

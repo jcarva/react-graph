@@ -13,6 +13,7 @@
     "@types/react-select": "^4.0.13",
     "@types/react-svg-inline": "^2.1.1",
     "@types/styled-components": "^5.1.7",
+    "axios": "^0.21.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-config-standard": "^14.1.0",
@@ -26,6 +27,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.4",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-graph": "link:..",
@@ -33,9 +35,8 @@
     "react-scripts": "3.4.3",
     "react-select": "^4.2.1",
     "react-svg-inline": "^2.1.1",
-    "typescript": "link:../node_modules/typescript",
     "styled-components": "^5.2.1",
-    "prettier": "^2.0.4"
+    "typescript": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

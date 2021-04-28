@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
 import ReactGraph from "react-graph";
-import { PageWrapper } from "../components/common/Organisms";
-import { SideBar } from "../components/sidebar/Sidebar";
-import { SearchBar } from "../components/search-bar/SearchBar";
-import { InfoPanel } from "../components/inspector/InfoPanel";
+import { PageWrapper, ReactGraphWrapper } from "../common/Organisms";
+import { SideBar } from "./sidebar/Sidebar";
+import { SearchBar } from "./search-bar/SearchBar";
+import { InfoPanel } from "./inspector/InfoPanel";
 
 const Dashboard = (props: any) => {
   const [graphState, setGraphState] = useState({
@@ -22,15 +22,19 @@ const Dashboard = (props: any) => {
   });
   const [styles, setStyles] = useState({ nodes: {}, relationships: {} });
 
-  const nodesIdMap = useMemo(() => {
-    const nodesMap = {};
-    props.nodes.forEach((node: any) => {
-      // @ts-ignore
-      nodesMap[node.id] = node;
-    });
-
-    return nodesMap;
-  }, [props.nodes]);
+  const selectOptions = useMemo(
+    () =>
+      props.nodes.map((node: { properties: { name: any }; id: any }) => {
+        if (node.properties && node.properties.name) {
+          return {
+            label: node.properties.name,
+            value: node.id,
+          };
+        }
+      }),
+    // TODO: Optimize deep comparison to big data
+    [JSON.stringify(props.nodes)]
+  );
 
   const nodesLabels = useMemo(() => {
     const labels = new Set();
@@ -43,7 +47,8 @@ const Dashboard = (props: any) => {
     });
 
     return Array.from(labels);
-  }, [props.nodes]);
+    // TODO: Optimize deep comparison to big data
+  }, [JSON.stringify(props.nodes)]);
 
   const relationshipsLabels = useMemo(() => {
     const labels = new Set();
@@ -54,20 +59,8 @@ const Dashboard = (props: any) => {
     });
 
     return Array.from(labels);
-  }, [props.relationships]);
-
-  const selectOptions = useMemo(
-    () =>
-      props.nodes.map((node: { properties: { name: any }; id: any }) => {
-        if (node.properties && node.properties.name) {
-          return {
-            label: node.properties.name,
-            value: node.id,
-          };
-        }
-      }),
-    [props.nodes]
-  );
+    // TODO: Optimize deep comparison to big data
+  }, [JSON.stringify(props.relationships)]);
 
   const handleSelectChange = (selectedOption: any) => {
     let selectedNodes: any;
@@ -75,7 +68,7 @@ const Dashboard = (props: any) => {
     if (selectedOption) {
       selectedNodes = selectedOption.map(
         // @ts-ignore
-        (option: any) => nodesIdMap[option.value]
+        (option: any) => props.nodesIdMap[option.value]
       );
     }
     setSelectedOptions(selectedOption);
@@ -94,15 +87,16 @@ const Dashboard = (props: any) => {
     }
 
     // TODO: Improve filter to reduce time complexity
-    const filteredNodes = props.nodes.filter((node: any) => {
+    const nodes = props.nodes.filter((node: any) => {
       const hasNodeAnyCheckedLabelList = stateChecked.filter(
         (checkLabel: any) => node.labels.includes(checkLabel)
       );
+
       return hasNodeAnyCheckedLabelList.length;
     });
 
     // @ts-ignore
-    setGraphState({ nodes: filteredNodes, relationships: [] });
+    setGraphState({ nodes, relationships: [] });
     setCheckedNodesLabels(stateChecked);
     setCheckedRelationshipsLabels([]);
     setSelectedOptions(null);
@@ -118,23 +112,19 @@ const Dashboard = (props: any) => {
       stateChecked.push(value);
       // @ts-ignore
       const nodes: any[] = [];
-      const filteredRelationships: any[] = [];
+      const relationships: any[] = [];
       props.relationships.map((relationship: any) => {
         // @ts-ignore
         if (checkedRelationshipsLabels.includes(relationship.type)) {
           // @ts-ignore
-          nodes.push(nodesIdMap[relationship.startNodeId]);
+          nodes.push(props.nodesIdMap[relationship.startNodeId]);
           // @ts-ignore
-          nodes.push(nodesIdMap[relationship.endNodeId]);
-          filteredRelationships.push(relationship);
+          nodes.push(props.nodesIdMap[relationship.endNodeId]);
+          relationships.push(relationship);
         }
       });
-      setGraphState({
-        // @ts-ignore
-        nodes: [...graphState.nodes, ...nodes],
-        // @ts-ignore
-        relationships: filteredRelationships,
-      });
+      // @ts-ignore
+      setGraphState({ nodes: [...graphState.nodes, ...nodes], relationships });
       setSelectedOptions(null);
       setAddedNodes([]);
     } else {
@@ -164,26 +154,26 @@ const Dashboard = (props: any) => {
           checkedRelationshipsLabels={checkedRelationshipsLabels}
           styles={styles}
         />
-        <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 1 }}>
           <SearchBar
             selectOptions={selectOptions}
             selectedOptions={selectedOptions}
             handleSelectChange={handleSelectChange}
           />
-          <div style={{ flex: 1, height: "50vh" }}>
+          <ReactGraphWrapper>
             <ReactGraph
               initialState={graphState}
               nodes={props.nodes}
               relationships={props.relationships}
+              addedNodes={addedNodes}
               onInspect={setDataOnInspect}
               onStyleChange={setStyles}
-              addedNodes={addedNodes}
               width="100%"
               height="100%"
               hasLegends
               hasTruncatedFields
             />
-          </div>
+          </ReactGraphWrapper>
         </div>
       </div>
       <InfoPanel dataOnInspect={dataOnInspect} styles={styles} />

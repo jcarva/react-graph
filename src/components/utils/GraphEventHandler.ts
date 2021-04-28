@@ -1,6 +1,6 @@
 import { mapNodes, mapRelationships, getGraphStats } from "./mapper";
 
-export class GraphEventHandler {
+class GraphEventHandler {
   getNodeNeighbours: any;
   graph: any;
   graphView: any;
@@ -196,3 +196,5 @@ export class GraphEventHandler {
     this.onItemMouseOut();
   }
 }
+
+export { GraphEventHandler };

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import reactGraphLogo from "../../assets/images/react-graph-logo.png";
-import npmLogo from "../../assets/images/npm-logo.png";
-import gitHubLogo from "../../assets/images/github-logo.png";
+import reactGraphLogo from "../../../assets/images/react-graph-logo.png";
+import npmLogo from "../../../assets/images/npm-logo.png";
+import gitHubLogo from "../../../assets/images/github-logo.png";
 
 export const Header = (props: any) => (
   <HeaderWrapper>
@@ -45,7 +45,11 @@ export const LabelsList = (props: any) => {
             key={label}
             // @ts-ignore
             borderRadius={props.borderRadius}
-            style={props.styles && props.styles ? props.styles[label] : {}}
+            style={
+              props.styles && props.styles[label]
+                ? props.styles[label]
+                : { color: "#FFFFFF", background: "#A5ABB6" }
+            }
           >
             <Label>
               <CheckBox

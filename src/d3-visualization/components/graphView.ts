@@ -1,7 +1,7 @@
 import viz from "./visualization";
 import layout from "./layout";
 
-export default class graphView {
+class GraphView {
   callbacks: any;
   graph: any;
   style: any;
@@ -69,3 +69,5 @@ export default class graphView {
     return this.viz.zoomOutClick(elem);
   }
 }
+
+export { GraphView };

@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from "react";
 import deepmerge from "deepmerge";
-import styled from "styled-components";
-import { LegendComponent } from "./organisms/legend/Legend";
-import { GraphContainer } from "./GraphContainer";
-import { InspectorComponent } from "./organisms/inspector/Inspector";
-import neoGraphStyle, {
+import {
+  initGraphStyle,
   createNodeStyleGetter,
   createRelationshipStyleGetter,
 } from "./utils/graphStyle";
-
-const ReactGraphWrapper = styled.div`
-  display: flex;
-  width: ${(props: any) =>
-    props.width || "500px"}; // TODO: Use types default value
-  height: ${(props: any) =>
-    props.height || "500px"}; // TODO: Use types default value
-  justify-content: center;
-  position: relative;
-  text-align: center;
-`;
+import { ReactGraphWrapper } from "./organisms/styled";
+import { LegendComponent } from "./organisms/legend/Legend";
+import { Graph } from "./Graph";
+import { InspectorComponent } from "./organisms/inspector/Inspector";
 
 const ReactGraph = (props: any) => {
-  const [graphStyle, setGraphStyle] = useState(neoGraphStyle());
+  const [graphStyle, setGraphStyle] = useState(initGraphStyle());
   const [styleVersion, setStyleVersion] = useState(0);
   const [selectedItem, setSelectedItem] = useState({});
   const [hoveredItem, setHoveredItem] = useState({});
@@ -30,7 +20,7 @@ const ReactGraph = (props: any) => {
   useEffect(() => {
     if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
     if (props.onStyleChange) props.onStyleChange(getStyles()); // TODO: Use types default value
-  }, []);
+  }, [props.nodes, props.relationships]);
 
   useEffect(() => {
     if (props.onStyleVersionChange) props.onStyleVersionChange(styleVersion); // TODO: Use types default value
@@ -104,30 +94,29 @@ const ReactGraph = (props: any) => {
           onSelectedRelType={onSelectedRelType}
         />
       )}
-      <GraphContainer
-        hasTruncatedFields={props.hasTruncatedFields}
-        initialState={props.initialState}
-        graphStyle={graphStyle}
-        styleVersion={styleVersion}
-        nodes={props.nodes}
-        relationships={props.relationships}
-        fullscreen={false}
-        setGraph={props.setGraph}
-        onGraphModelChange={setStats}
+      <Graph
+        initialNodes={props.initialState.nodes}
+        initialRelationships={props.initialState.relationships}
+        allNodes={props.nodes}
+        allRelationships={props.relationships}
+        addedNodes={props.addedNodes}
         onItemMouseOver={setHoveredItem}
         onItemSelect={setSelectedItem}
-        addedNodes={props.addedNodes}
+        graphStyle={graphStyle}
+        styleVersion={styleVersion}
+        onGraphModelChange={setStats}
+        setGraph={props.setGraph}
         zoomMenu={props.zoomMenu}
       />
       {(props.hasInspector || props.hasLegends) && (
         <InspectorComponent
-          hasTruncatedFields={props.hasTruncatedFields}
           hoveredItem={hoveredItem}
           selectedItem={selectedItem}
           graphStyle={graphStyle}
           updateStyle={updateStyle}
           hasInspector={props.hasInspector}
           hasLegends={props.hasLegends}
+          hasTruncatedFields={props.hasTruncatedFields}
         />
       )}
     </ReactGraphWrapper>
@@ -135,7 +124,3 @@ const ReactGraph = (props: any) => {
 };
 
 export { ReactGraph };
-
-// MATCH (n:api {name: "AMfB ACS Main"}) RETURN n | get an specific node my name
-// MATCH (n)-[r]->(m) RETURN n,r,m  | get all node which has edges along with their properties
-// MATCH (n) WHERE NOT (n)--() RETURN n | get nodes without edges
