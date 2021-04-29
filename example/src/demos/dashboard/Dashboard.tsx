@@ -3,7 +3,7 @@ import ReactGraph from "react-graph";
 import { PageWrapper, ReactGraphWrapper } from "../common/Organisms";
 import { SideBar } from "./sidebar/Sidebar";
 import { SearchBar } from "./search-bar/SearchBar";
-import { InfoPanel } from "./inspector/InfoPanel";
+import { InfoPanel } from "./info-panel/InfoPanel";
 
 const Dashboard = (props: any) => {
   const [graphState, setGraphState] = useState({
