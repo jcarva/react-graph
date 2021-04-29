@@ -40,7 +40,7 @@ export const Minimalist = (props) => (
 ## Features
 
 * Compaptible with [Neo4j data format](#neo4j-data-format).
-* Complete Dashboard(link to demo) to map your data.
+* Complete and responsive [Dashboard](https://c1fde.csb.app/) to map your data.
 * Info panel that shows nodes and relationships information on hover.
 * Node menu on click.
 * Custom node colors by node label. 
